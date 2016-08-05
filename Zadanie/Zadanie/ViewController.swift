@@ -10,16 +10,33 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var labelaction: UILabel!
+    var count = 0
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
     }
+    
+    @IBAction func action(sender: UIButton) {
+        
+        labelaction.text = "Zmieniono \(count) raz"
+        count += 1
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        
     }
-
-
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        if let controller = segue.destinationViewController as? PetsTableViewController {
+            controller.data = ["x", "y"]
+        }
+        
+        
+    }
+    
 }
 
+ 
