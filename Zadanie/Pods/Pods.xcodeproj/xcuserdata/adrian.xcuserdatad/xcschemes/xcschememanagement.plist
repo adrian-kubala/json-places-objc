@@ -9,6 +9,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Decodable.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-Zadanie.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -22,7 +27,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>8FBEE74AED8901BD1D52D64C0F77F848</key>
+		<key>7CE8FD579212D45991DC5C372086ACB3</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F610C0EEE17F801D1399A44316DF9DD3</key>
 		<dict>
 			<key>primary</key>
 			<true/>
