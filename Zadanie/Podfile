@@ -3,5 +3,6 @@ use_frameworks!
 
 target 'Zadanie' do
     pod 'Alamofire'
-    pod 'Decodable'
+    pod 'AlamofireImage'
+    pod 'SwiftyJSON'
 end
