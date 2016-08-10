@@ -51,6 +51,9 @@ class JsonTableViewController: UITableViewController {
         if let myCell = cell as? MyTableViewCell {
             myCell.labelName.text = json![cellRow]["name"].stringValue
             
+            let longitude = json![cellRow]["coordinate"]["longitude"].doubleValue
+            let latitude = json![cellRow]["coordinate"]["latitude"].doubleValue
+            
             let pinUrl = json![cellRow]["pin_url"].stringValue
             getPin(pinUrl, completion: { (image) in
                 myCell.pinImage.image = image

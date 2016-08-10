@@ -11,6 +11,7 @@
 		3A14C0361D59D179006C908E /* JsonTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A14C0351D59D179006C908E /* JsonTableViewController.swift */; };
 		3A14C0381D59DD73006C908E /* MyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A14C0371D59DD73006C908E /* MyTableViewCell.swift */; };
 		3A2D71661D58A26C00F59321 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 3A2D71651D58A26C00F59321 /* .gitignore */; };
+		3A60B1C21D5B1C2200B513B8 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A60B1C11D5B1C2200B513B8 /* MapViewController.swift */; };
 		3AEDE4EF1D51D5BE00A3661B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEDE4EE1D51D5BE00A3661B /* AppDelegate.swift */; };
 		3AEDE4F61D51D5BE00A3661B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3AEDE4F51D51D5BE00A3661B /* Assets.xcassets */; };
 		3AEDE4F91D51D5BE00A3661B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AEDE4F71D51D5BE00A3661B /* LaunchScreen.storyboard */; };
@@ -23,6 +24,7 @@
 		3A14C0351D59D179006C908E /* JsonTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JsonTableViewController.swift; sourceTree = "<group>"; };
 		3A14C0371D59DD73006C908E /* MyTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyTableViewCell.swift; sourceTree = "<group>"; };
 		3A2D71651D58A26C00F59321 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		3A60B1C11D5B1C2200B513B8 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		3AEDE4EB1D51D5BE00A3661B /* Zadanie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Zadanie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3AEDE4EE1D51D5BE00A3661B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3AEDE4F51D51D5BE00A3661B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -81,6 +83,7 @@
 				3A2D71651D58A26C00F59321 /* .gitignore */,
 				3A14C0351D59D179006C908E /* JsonTableViewController.swift */,
 				3A14C0371D59DD73006C908E /* MyTableViewCell.swift */,
+				3A60B1C11D5B1C2200B513B8 /* MapViewController.swift */,
 			);
 			path = Zadanie;
 			sourceTree = "<group>";
@@ -220,6 +223,7 @@
 				3A14C0361D59D179006C908E /* JsonTableViewController.swift in Sources */,
 				3AEDE4EF1D51D5BE00A3661B /* AppDelegate.swift in Sources */,
 				3A14C0381D59DD73006C908E /* MyTableViewCell.swift in Sources */,
+				3A60B1C21D5B1C2200B513B8 /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

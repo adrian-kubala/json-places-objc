@@ -5,4 +5,5 @@ target 'Zadanie' do
     pod 'Alamofire'
     pod 'AlamofireImage'
     pod 'SwiftyJSON'
+    pod 'GoogleMaps'
 end
