@@ -60,6 +60,7 @@
                                 <connections>
                                     <outlet property="labelName" destination="pwH-ZH-cyc" id="Dfe-bT-qvw"/>
                                     <outlet property="pinImage" destination="XUY-lo-f62" id="Os2-54-ssU"/>
+                                    <segue destination="fmX-B4-ZZv" kind="show" identifier="mapSegue" id="Feo-FM-3QR"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

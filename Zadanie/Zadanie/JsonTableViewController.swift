@@ -15,6 +15,7 @@ class JsonTableViewController: UITableViewController {
     
     var json: JSON?
     let reuseIdentifier = "cell"
+    let segueIdentifier = "mapSegue"
 
 
     override func viewDidLoad() {
@@ -61,6 +62,14 @@ class JsonTableViewController: UITableViewController {
             
         }
         return cell
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "mapSegue" {
+            var secondViewController = segue.destinationViewController as MapViewController
+            var indexPath = tableView.indexPathForSelectedRow
+            
+        }
     }
     
     func fetchJson(url: String) {
