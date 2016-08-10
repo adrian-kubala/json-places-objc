@@ -21,9 +21,7 @@ class JsonTableViewController: UITableViewController {
         super.viewDidLoad()
         
         let jsonUrl = "https://dl.dropboxusercontent.com/u/18389601/development/test/Location/locations.json"
-        
         fetchJson(jsonUrl)
-        
     }
 
     override func didReceiveMemoryWarning() {
