@@ -39,7 +39,7 @@
                                             <attributedString key="attributedText">
                                                 <fragment content="Label">
                                                     <attributes>
-                                                        <color key="NSColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                         <font key="NSFont" size="17" name="HelveticaNeue"/>
                                                         <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                     </attributes>
@@ -60,7 +60,6 @@
                                 <connections>
                                     <outlet property="labelName" destination="pwH-ZH-cyc" id="Dfe-bT-qvw"/>
                                     <outlet property="pinImage" destination="XUY-lo-f62" id="Os2-54-ssU"/>
-                                    <segue destination="fmX-B4-ZZv" kind="show" identifier="mapSegue" id="Feo-FM-3QR"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -71,6 +70,9 @@
                     </tableView>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <navigationItem key="navigationItem" id="NdN-Df-b1q"/>
+                    <connections>
+                        <segue destination="fmX-B4-ZZv" kind="show" identifier="mapSegue" id="O7o-iq-e9N"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="V15-yh-hSm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

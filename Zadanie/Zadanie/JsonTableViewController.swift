@@ -16,6 +16,9 @@ class JsonTableViewController: UITableViewController {
     var json: JSON?
     let reuseIdentifier = "cell"
     let segueIdentifier = "mapSegue"
+    var latitude: Double?
+    var longitude: Double?
+    var pinImageForMap: UIImage?
 
 
     override func viewDidLoad() {
@@ -52,9 +55,6 @@ class JsonTableViewController: UITableViewController {
         if let myCell = cell as? MyTableViewCell {
             myCell.labelName.text = json![cellRow]["name"].stringValue
             
-            let longitude = json![cellRow]["coordinate"]["longitude"].doubleValue
-            let latitude = json![cellRow]["coordinate"]["latitude"].doubleValue
-            
             let pinUrl = json![cellRow]["pin_url"].stringValue
             getPin(pinUrl, completion: { (image) in
                 myCell.pinImage.image = image
@@ -65,11 +65,29 @@ class JsonTableViewController: UITableViewController {
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "mapSegue" {
-            var secondViewController = segue.destinationViewController as MapViewController
-            var indexPath = tableView.indexPathForSelectedRow
-            
+
+        if segue.identifier == segueIdentifier {
+            if let destinationViewController = segue.destinationViewController as? MapViewController {
+                destinationViewController.mapLatitude = latitude
+                destinationViewController.mapLongitude = longitude
+                destinationViewController.mapPinImage = pinImageForMap
+            }
         }
+    }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let selectedCell = indexPath.row
+        
+        latitude = json![selectedCell]["coordinate"]["latitude"].doubleValue
+        longitude = json![selectedCell]["coordinate"]["longitude"].doubleValue
+
+        
+        let tempCell = tableView.cellForRowAtIndexPath(indexPath)
+        
+        pinImageForMap = (tempCell as! MyTableViewCell).pinImage.image
+        
+        
+        performSegueWithIdentifier(segueIdentifier, sender: nil)
     }
     
     func fetchJson(url: String) {
