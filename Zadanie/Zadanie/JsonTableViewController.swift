@@ -20,6 +20,7 @@ class JsonTableViewController: UITableViewController {
     var longitude: Double?
     var pinImageForMap: UIImage?
     var pinNameForMap: String?
+    var cachedImages = [Int : UIImage?]()
 
 
     override func viewDidLoad() {
@@ -43,22 +44,33 @@ class JsonTableViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(reuseIdentifier, forIndexPath: indexPath)
-
         let cellRow = indexPath.row
         
-        if let myCell = cell as? MyTableViewCell {
-            myCell.labelName.text = json![cellRow]["name"].stringValue
-            
-            let pinUrl = json![cellRow]["pin_url"].stringValue
-            getPin(pinUrl, completion: { (image) in
-                
-                self.resizeImage(image!, newWidth: 30) { (scaledImage) in
-                    myCell.pinImage.image = scaledImage
-                }
-            })
-        }
+        let cell = tableView.dequeueReusableCellWithIdentifier(reuseIdentifier, forIndexPath: indexPath)
+        
+        fillCell(cellRow, passedCell: cell)
         return cell
+    }
+    
+    func fillCell(row: Int, passedCell: UITableViewCell) {
+        
+        if let myCell = passedCell as? MyTableViewCell {
+            myCell.labelName.text = json![row]["name"].stringValue
+            
+            let pinUrl = json![row]["pin_url"].stringValue
+            
+            if let cachedImage = cachedImages[row] {
+                myCell.pinImage.image = cachedImage
+            } else {
+                getPin(pinUrl, completion: { (image) in
+                    
+                    self.resizeImage(image!, newWidth: 30) { (scaledImage) in
+                        myCell.pinImage.image = scaledImage
+                        self.cachedImages[row] = scaledImage
+                    }
+                })
+            }
+        }
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
