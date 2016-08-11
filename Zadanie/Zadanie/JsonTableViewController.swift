@@ -19,6 +19,7 @@ class JsonTableViewController: UITableViewController {
     var latitude: Double?
     var longitude: Double?
     var pinImageForMap: UIImage?
+    var pinNameForMap: String?
 
 
     override func viewDidLoad() {
@@ -51,9 +52,11 @@ class JsonTableViewController: UITableViewController {
             
             let pinUrl = json![cellRow]["pin_url"].stringValue
             getPin(pinUrl, completion: { (image) in
-                myCell.pinImage.image = image
+                
+                self.resizeImage(image!, newWidth: 30) { (scaledImage) in
+                    myCell.pinImage.image = scaledImage
+                }
             })
-            
         }
         return cell
     }
@@ -65,6 +68,7 @@ class JsonTableViewController: UITableViewController {
                 destinationViewController.mapLatitude = latitude
                 destinationViewController.mapLongitude = longitude
                 destinationViewController.mapPinImage = pinImageForMap
+                destinationViewController.mapPinName = pinNameForMap
             }
         }
     }
@@ -74,35 +78,34 @@ class JsonTableViewController: UITableViewController {
         
         latitude = json![selectedCell]["coordinate"]["latitude"].doubleValue
         longitude = json![selectedCell]["coordinate"]["longitude"].doubleValue
+        pinNameForMap = json![selectedCell]["name"].stringValue
 
         let tempCell = tableView.cellForRowAtIndexPath(indexPath)
-        let unscaledImage = (tempCell as! MyTableViewCell).pinImage.image
-        let scaledImage = resizeImage(unscaledImage!, newWidth: 20)
-        pinImageForMap = scaledImage
+        pinImageForMap = (tempCell as! MyTableViewCell).pinImage.image
         
         performSegueWithIdentifier(segueIdentifier, sender: nil)
     }
     
     
-    func resizeImage(image: UIImage, newWidth: CGFloat) -> UIImage {
-        /*
+    func resizeImage(image: UIImage, newWidth: CGFloat, completion: (scaledImage: UIImage) -> ()) {
+        
         let qualityOfServiceClass = QOS_CLASS_BACKGROUND
         let backgroundQueue = dispatch_get_global_queue(qualityOfServiceClass, 0)
         dispatch_async(backgroundQueue, {
-            print("This is run on the background queue")
+            // This is run on the background queue
+            
+            let scale = newWidth / image.size.width
+            let newHeight = image.size.height * scale
+            UIGraphicsBeginImageContext(CGSizeMake(newWidth, newHeight))
+            image.drawInRect(CGRectMake(0, 0, newWidth, newHeight))
+            let newImage = UIGraphicsGetImageFromCurrentImageContext()
+            UIGraphicsEndImageContext()
             
             dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                print("This is run on the main queue, after the previous code in outer block")
+                // This is run on the main queue, after the previous code in outer block
+                completion(scaledImage: newImage)
             })
-        }) */
-        let scale = newWidth / image.size.width
-        let newHeight = image.size.height * scale
-        UIGraphicsBeginImageContext(CGSizeMake(newWidth, newHeight))
-        image.drawInRect(CGRectMake(0, 0, newWidth, newHeight))
-        let newImage = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-        
-        return newImage
+        })
     }
     
     func fetchJson(url: String) {
