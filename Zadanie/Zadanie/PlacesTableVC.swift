@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import SwiftyJSON
 
 class PlacesTableVC: UITableViewController {
     
@@ -44,7 +43,7 @@ class PlacesTableVC: UITableViewController {
             myCell.placeImage.image = passedCachedImages[cellIndex]!
             myCell.placeLabel.text = passedPlaces[cellIndex].pinName
         }
- 
+        
         return cell
     }
     

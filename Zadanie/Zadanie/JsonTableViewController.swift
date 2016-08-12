@@ -90,37 +90,34 @@ class JsonTableViewController: UITableViewController {
         placesToPass = []
         cachedImagesToPass = []
         
-        
         let latitude = places[selectedCell].latitude
         let longitude = places[selectedCell].longitude
         
-        let iterator = places.count-1
-        
-        getAllDistances(latitude, selectedLongitude: longitude, cellRow: selectedCell, iter: iterator)
+        getAllDistances(latitude, selectedLongitude: longitude, cellRow: selectedCell, count: places.count)
         
         performSegueWithIdentifier(segueIdentifier, sender: nil)
     }
     
-    func getAllDistances(selectedLatitude: Double, selectedLongitude: Double, cellRow: Int, iter: Int) {
-        var iterator = iter
-        while iterator >= 0 {
+    func getAllDistances(selectedLatitude: Double, selectedLongitude: Double, cellRow: Int, count: Int) {
+        var i = 0
+        while i < count {
             
-            if iterator != cellRow {
+            if i != cellRow {
                 
-                let otherLatitude = places[iterator].latitude
-                let otherLongitude = places[iterator].longitude
+                let otherLatitude = places[i].latitude
+                let otherLongitude = places[i].longitude
                 
                 let distance = getDistance(selectedLatitude, aLongitude: selectedLongitude, bLatitude: otherLatitude, bLongitude: otherLongitude)
                 
                 if distance <= 2 {
-                    placesToPass.append(places[iterator])
-                    cachedImagesToPass.append(cachedImages[iterator]!)
+                    placesToPass.append(places[i])
+                    cachedImagesToPass.append(cachedImages[i]!)
                 }
             }
-            iterator = iterator - 1
+            i += 1
         }
     }
-    
+
     func getDistance(aLatitude: Double, aLongitude: Double, bLatitude: Double, bLongitude: Double) -> Double {
         let selectedLocation = CLLocation(latitude: aLatitude, longitude: aLongitude)
         let otherLocation = CLLocation(latitude: bLatitude, longitude: bLongitude)

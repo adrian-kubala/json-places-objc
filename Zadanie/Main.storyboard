@@ -5,7 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
-        <!--Json Table View Controller-->
+        <!--Lokalizacje-->
         <scene sceneID="cOP-1p-FMM">
             <objects>
                 <tableViewController automaticallyAdjustsScrollViewInsets="NO" id="OUs-ub-k41" customClass="JsonTableViewController" customModule="Zadanie" customModuleProvider="target" sceneMemberID="viewController">
@@ -68,33 +68,14 @@
                         </connections>
                     </tableView>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
-                    <navigationItem key="navigationItem" id="NdN-Df-b1q"/>
+                    <navigationItem key="navigationItem" title="Lokalizacje" id="NdN-Df-b1q"/>
                     <connections>
-                        <segue destination="fmX-B4-ZZv" kind="show" identifier="mapSegue" id="O7o-iq-e9N"/>
                         <segue destination="hJa-fx-boV" kind="show" identifier="placesSegue" id="oFt-8m-0fe"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="V15-yh-hSm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1468" y="613"/>
-        </scene>
-        <!--Map View Controller-->
-        <scene sceneID="7ND-EF-NWT">
-            <objects>
-                <viewController id="fmX-B4-ZZv" customClass="MapViewController" customModule="Zadanie" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="iFr-gs-9v8"/>
-                        <viewControllerLayoutGuide type="bottom" id="Tli-uI-vOK"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="mK6-wq-Rg0">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="6qr-tb-Lk5" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2172" y="281"/>
         </scene>
         <!--Places TableVC-->
         <scene sceneID="PTf-gQ-zOv">
@@ -165,7 +146,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="krq-YJ-yP7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2166" y="1017"/>
+            <point key="canvasLocation" x="2154" y="613"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="0KK-wt-ydS">
