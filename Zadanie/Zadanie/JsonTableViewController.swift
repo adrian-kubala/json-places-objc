@@ -10,18 +10,18 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 import AlamofireImage
+import CoreLocation
 
 class JsonTableViewController: UITableViewController {
     
-    var json: JSON?
     let reuseIdentifier = "cell"
-    let segueIdentifier = "mapSegue"
-    var latitude: Double?
-    var longitude: Double?
-    var pinImageForMap: UIImage?
-    var pinNameForMap: String?
+    let segueIdentifier = "placesSegue"
+    
     var cachedImages = [Int : UIImage?]()
-
+    var cachedImagesToPass = [UIImage?]()
+    
+    var places = [Place]()
+    var placesToPass = [Place]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,7 +40,7 @@ class JsonTableViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return json?.array?.count ?? 0
+        return places.count ?? 0
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -49,15 +49,16 @@ class JsonTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier(reuseIdentifier, forIndexPath: indexPath)
         
         fillCell(cellRow, passedCell: cell)
+        
         return cell
     }
     
     func fillCell(row: Int, passedCell: UITableViewCell) {
         
         if let myCell = passedCell as? MyTableViewCell {
-            myCell.labelName.text = json![row]["name"].stringValue
+            myCell.labelName.text = places[row].pinName
             
-            let pinUrl = json![row]["pin_url"].stringValue
+            let pinUrl = places[row].pinImageUrl
             
             if let cachedImage = cachedImages[row] {
                 myCell.pinImage.image = cachedImage
@@ -65,8 +66,8 @@ class JsonTableViewController: UITableViewController {
                 getPin(pinUrl, completion: { (image) in
                     
                     self.resizeImage(image!, newWidth: 30) { (scaledImage) in
-                        myCell.pinImage.image = scaledImage
                         self.cachedImages[row] = scaledImage
+                        myCell.pinImage.image = self.cachedImages[row]!
                     }
                 })
             }
@@ -76,11 +77,9 @@ class JsonTableViewController: UITableViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
 
         if segue.identifier == segueIdentifier {
-            if let destinationViewController = segue.destinationViewController as? MapViewController {
-                destinationViewController.mapLatitude = latitude
-                destinationViewController.mapLongitude = longitude
-                destinationViewController.mapPinImage = pinImageForMap
-                destinationViewController.mapPinName = pinNameForMap
+            if let destinationViewController = segue.destinationViewController as? PlacesTableVC {
+                destinationViewController.passedPlaces = placesToPass
+                destinationViewController.passedCachedImages = cachedImagesToPass
             }
         }
     }
@@ -88,16 +87,47 @@ class JsonTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let selectedCell = indexPath.row
         
-        latitude = json![selectedCell]["coordinate"]["latitude"].doubleValue
-        longitude = json![selectedCell]["coordinate"]["longitude"].doubleValue
-        pinNameForMap = json![selectedCell]["name"].stringValue
-
-        let tempCell = tableView.cellForRowAtIndexPath(indexPath)
-        pinImageForMap = (tempCell as! MyTableViewCell).pinImage.image
+        placesToPass = []
+        cachedImagesToPass = []
+        
+        
+        let latitude = places[selectedCell].latitude
+        let longitude = places[selectedCell].longitude
+        
+        let iterator = places.count-1
+        
+        getAllDistances(latitude, selectedLongitude: longitude, cellRow: selectedCell, iter: iterator)
         
         performSegueWithIdentifier(segueIdentifier, sender: nil)
     }
     
+    func getAllDistances(selectedLatitude: Double, selectedLongitude: Double, cellRow: Int, iter: Int) {
+        var iterator = iter
+        while iterator >= 0 {
+            
+            if iterator != cellRow {
+                
+                let otherLatitude = places[iterator].latitude
+                let otherLongitude = places[iterator].longitude
+                
+                let distance = getDistance(selectedLatitude, aLongitude: selectedLongitude, bLatitude: otherLatitude, bLongitude: otherLongitude)
+                
+                if distance <= 2 {
+                    placesToPass.append(places[iterator])
+                    cachedImagesToPass.append(cachedImages[iterator]!)
+                }
+            }
+            iterator = iterator - 1
+        }
+
+    }
+    
+    func getDistance(aLatitude: Double, aLongitude: Double, bLatitude: Double, bLongitude: Double) -> Double {
+        let selectedLocation = CLLocation(latitude: aLatitude, longitude: aLongitude)
+        let otherLocation = CLLocation(latitude: bLatitude, longitude: bLongitude)
+        
+        return selectedLocation.distanceFromLocation(otherLocation) / 1000
+    }
     
     func resizeImage(image: UIImage, newWidth: CGFloat, completion: (scaledImage: UIImage) -> ()) {
         
@@ -125,12 +155,30 @@ class JsonTableViewController: UITableViewController {
             switch response.result {
             case .Success:
                 if let value = response.result.value {
-                    self.json = JSON(value)
+                    self.fillPlacesWithJson(JSON(value))
                     self.tableView.reloadData()
                 }
             case .Failure(let error):
                 print(error)
             }
+        }
+    }
+    
+    func fillPlacesWithJson(json:JSON?) {
+        
+        let count = json?.array?.count ?? 0
+        
+        var i = 0
+        
+        while i < count {
+            let name = json![i]["name"].stringValue
+            let image = json![i]["pin_url"].stringValue
+            let lat = json![i]["coordinate"]["latitude"].doubleValue
+            let lon = json![i]["coordinate"]["longitude"].doubleValue
+            
+            let place = Place(pinImageUrl: image, pinName: name, latitude: lat, longitude: lon)
+            places.append(place)
+            i += 1
         }
     }
     
