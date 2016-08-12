@@ -119,7 +119,6 @@ class JsonTableViewController: UITableViewController {
             }
             iterator = iterator - 1
         }
-
     }
     
     func getDistance(aLatitude: Double, aLongitude: Double, bLatitude: Double, bLongitude: Double) -> Double {

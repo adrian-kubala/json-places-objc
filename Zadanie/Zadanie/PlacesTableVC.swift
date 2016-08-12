@@ -47,4 +47,14 @@ class PlacesTableVC: UITableViewController {
  
         return cell
     }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+        let latitude = passedPlaces[indexPath.row].latitude
+        let longitude = passedPlaces[indexPath.row].longitude
+        
+        let alert = UIAlertController(title: "Współrzędne", message: "Szerokość: \(latitude)\nDługość: \(longitude)", preferredStyle: UIAlertControllerStyle.Alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
+        self.presentViewController(alert, animated: true, completion: nil)
+    }
 }
