@@ -23,6 +23,7 @@ class JsonTableViewController: UITableViewController {
     var places = [Place]()
     var placesToPass = [Place]()
 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -162,19 +163,14 @@ class JsonTableViewController: UITableViewController {
     
     func fillPlacesWithJson(json:JSON?) {
         
-        let count = json?.array?.count ?? 0
-        
-        var i = 0
-        
-        while i < count {
-            let name = json![i]["name"].stringValue
-            let image = json![i]["pin_url"].stringValue
-            let lat = json![i]["coordinate"]["latitude"].doubleValue
-            let lon = json![i]["coordinate"]["longitude"].doubleValue
+        for object in (json?.array)! {
+            let name = object["name"].stringValue
+            let image = object["pin_url"].stringValue
+            let lat = object["coordinate"]["latitude"].doubleValue
+            let lon = object["coordinate"]["longitude"].doubleValue
             
             let place = Place(pinImageUrl: image, pinName: name, latitude: lat, longitude: lon)
             places.append(place)
-            i += 1
         }
     }
     
