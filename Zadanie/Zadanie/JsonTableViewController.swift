@@ -22,6 +22,8 @@ class JsonTableViewController: UITableViewController {
     
     var places = [Place]()
     var placesToPass = [Place]()
+    
+    var distancesToPass = [Double]()
 
     
     override func viewDidLoad() {
@@ -81,6 +83,7 @@ class JsonTableViewController: UITableViewController {
             if let destinationViewController = segue.destinationViewController as? PlacesTableVC {
                 destinationViewController.passedPlaces = placesToPass
                 destinationViewController.passedCachedImages = cachedImagesToPass
+                destinationViewController.distances = distancesToPass
             }
         }
     }
@@ -90,13 +93,14 @@ class JsonTableViewController: UITableViewController {
         
         placesToPass = []
         cachedImagesToPass = []
+        distancesToPass = []
         
         let latitude = places[selectedCell].latitude
         let longitude = places[selectedCell].longitude
         
         getAllDistances(latitude, selectedLongitude: longitude, cellRow: selectedCell, count: places.count)
         
-        performSegueWithIdentifier(segueIdentifier, sender: nil)
+        performSegueWithIdentifier(segueIdentifier, sender: self)
     }
     
     func getAllDistances(selectedLatitude: Double, selectedLongitude: Double, cellRow: Int, count: Int) {
@@ -113,6 +117,7 @@ class JsonTableViewController: UITableViewController {
                 if distance <= 2 {
                     placesToPass.append(places[i])
                     cachedImagesToPass.append(cachedImages[i]!)
+                    distancesToPass.append(distance)
                 }
             }
             i += 1

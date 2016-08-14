@@ -12,6 +12,7 @@ class PlacesTableVC: UITableViewController {
     
     var passedPlaces = [Place]()
     var passedCachedImages = [UIImage?]()
+    var distances = [Double]()
     
     var reuseIdentifier = "placesTableCell"
     
@@ -51,8 +52,9 @@ class PlacesTableVC: UITableViewController {
         
         let latitude = passedPlaces[indexPath.row].latitude
         let longitude = passedPlaces[indexPath.row].longitude
+        let distance = distances[indexPath.row]
         
-        let alert = UIAlertController(title: "Współrzędne", message: "Szerokość: \(latitude)\nDługość: \(longitude)", preferredStyle: UIAlertControllerStyle.Alert)
+        let alert = UIAlertController(title: "Współrzędne", message: "Szerokość: \(latitude)\nDługość: \(longitude)\nOdległość: \(String(format:"%.2f", distance)) km", preferredStyle: UIAlertControllerStyle.Alert)
         alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
         self.presentViewController(alert, animated: true, completion: nil)
     }
