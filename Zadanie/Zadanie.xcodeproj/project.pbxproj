@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		3A031D871D5873B900FB2CBF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A031D841D5873B900FB2CBF /* Main.storyboard */; };
 		3A0F432C1D5DA6B400210784 /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0F432B1D5DA6B400210784 /* Place.swift */; };
-		3A0F432E1D5E033C00210784 /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0F432D1D5E033C00210784 /* BaseTableViewController.swift */; };
 		3A14C0361D59D179006C908E /* JsonTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A14C0351D59D179006C908E /* JsonTableViewController.swift */; };
 		3A14C0381D59DD73006C908E /* MyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A14C0371D59DD73006C908E /* MyTableViewCell.swift */; };
 		3A2D71661D58A26C00F59321 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 3A2D71651D58A26C00F59321 /* .gitignore */; };
@@ -24,10 +23,9 @@
 		2B66E8AC9B755B445A769F2B /* Pods_Zadanie.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Zadanie.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A031D841D5873B900FB2CBF /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = SOURCE_ROOT; };
 		3A0F432B1D5DA6B400210784 /* Place.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
-		3A0F432D1D5E033C00210784 /* BaseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
 		3A14C0351D59D179006C908E /* JsonTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JsonTableViewController.swift; sourceTree = "<group>"; };
 		3A14C0371D59DD73006C908E /* MyTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyTableViewCell.swift; sourceTree = "<group>"; };
-		3A2D71651D58A26C00F59321 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		3A2D71651D58A26C00F59321 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = .gitignore; path = Zadanie/.gitignore; sourceTree = "<group>"; };
 		3AEDE4EB1D51D5BE00A3661B /* Zadanie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Zadanie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3AEDE4EE1D51D5BE00A3661B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3AEDE4F51D51D5BE00A3661B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -61,6 +59,7 @@
 		3AEDE4E21D51D5BE00A3661B = {
 			isa = PBXGroup;
 			children = (
+				3A2D71651D58A26C00F59321 /* .gitignore */,
 				3AEDE4ED1D51D5BE00A3661B /* Zadanie */,
 				3AEDE4EC1D51D5BE00A3661B /* Products */,
 				F5B4554A7962773A50C53938 /* Pods */,
@@ -84,12 +83,10 @@
 				3AEDE4F51D51D5BE00A3661B /* Assets.xcassets */,
 				3AEDE4F71D51D5BE00A3661B /* LaunchScreen.storyboard */,
 				3AEDE4FA1D51D5BE00A3661B /* Info.plist */,
-				3A2D71651D58A26C00F59321 /* .gitignore */,
 				3A14C0351D59D179006C908E /* JsonTableViewController.swift */,
 				3A14C0371D59DD73006C908E /* MyTableViewCell.swift */,
 				3AFF78F31D5C8BB000B1509B /* PlacesTableVC.swift */,
 				3A0F432B1D5DA6B400210784 /* Place.swift */,
-				3A0F432D1D5E033C00210784 /* BaseTableViewController.swift */,
 			);
 			path = Zadanie;
 			sourceTree = "<group>";
@@ -229,7 +226,6 @@
 				3A14C0361D59D179006C908E /* JsonTableViewController.swift in Sources */,
 				3AEDE4EF1D51D5BE00A3661B /* AppDelegate.swift in Sources */,
 				3A0F432C1D5DA6B400210784 /* Place.swift in Sources */,
-				3A0F432E1D5E033C00210784 /* BaseTableViewController.swift in Sources */,
 				3AFF78F41D5C8BB000B1509B /* PlacesTableVC.swift in Sources */,
 				3A14C0381D59DD73006C908E /* MyTableViewCell.swift in Sources */,
 			);

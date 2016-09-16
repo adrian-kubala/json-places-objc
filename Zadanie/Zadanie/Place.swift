@@ -9,10 +9,8 @@
 import Foundation
 
 struct Place {
-    
     var pinImageUrl: String
     var pinName: String
     var latitude: Double
     var longitude: Double
-    
 }

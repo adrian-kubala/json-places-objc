@@ -9,13 +9,11 @@
 import UIKit
 
 class PlacesTableVC: UITableViewController {
-    
     var passedPlaces = [Place]()
     var passedCachedImages = [UIImage?]()
     var distances = [Double]()
     
     var reuseIdentifier = "placesTableCell"
-    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,7 +47,6 @@ class PlacesTableVC: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        
         let latitude = passedPlaces[indexPath.row].latitude
         let longitude = passedPlaces[indexPath.row].longitude
         let distance = distances[indexPath.row]

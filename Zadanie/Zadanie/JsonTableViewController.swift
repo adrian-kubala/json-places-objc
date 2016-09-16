@@ -24,7 +24,6 @@ class JsonTableViewController: UITableViewController {
     var placesToPass = [Place]()
     
     var distancesToPass = [Double]()
-
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,35 +56,40 @@ class JsonTableViewController: UITableViewController {
     }
     
     func fillCell(row: Int, passedCell: UITableViewCell) {
-        
-        if let myCell = passedCell as? MyTableViewCell {
-            myCell.labelName.text = places[row].pinName
-            
-            let pinUrl = places[row].pinImageUrl
-            
-            if let cachedImage = cachedImages[row] {
-                myCell.pinImage.image = cachedImage
-            } else {
-                getPin(pinUrl, completion: { (image) in
-                    
-                    self.resizeImage(image!, newWidth: 30) { (scaledImage) in
-                        self.cachedImages[row] = scaledImage
-                        myCell.pinImage.image = self.cachedImages[row]!
-                    }
-                })
-            }
+        guard let myCell = passedCell as? MyTableViewCell else {
+            return
         }
+        
+        myCell.labelName.text = places[row].pinName
+        
+        let pinUrl = places[row].pinImageUrl
+        
+        guard let cachedImage = cachedImages[row] else {
+            getPin(pinUrl, completion: { (image) in
+                
+                self.resizeImage(image!, newWidth: 30) { (scaledImage) in
+                    self.cachedImages[row] = scaledImage
+                    myCell.pinImage.image = self.cachedImages[row]!
+                }
+            })
+            return
+        }
+        
+        myCell.pinImage.image = cachedImage
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-
-        if segue.identifier == segueIdentifier {
-            if let destinationViewController = segue.destinationViewController as? PlacesTableVC {
-                destinationViewController.passedPlaces = placesToPass
-                destinationViewController.passedCachedImages = cachedImagesToPass
-                destinationViewController.distances = distancesToPass
-            }
+        guard segue.identifier == segueIdentifier else {
+            return
         }
+        
+        guard let destinationViewController = segue.destinationViewController as? PlacesTableVC else {
+            return
+        }
+        
+        destinationViewController.passedPlaces = placesToPass
+        destinationViewController.passedCachedImages = cachedImagesToPass
+        destinationViewController.distances = distancesToPass
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
@@ -97,38 +101,40 @@ class JsonTableViewController: UITableViewController {
         
         let latitude = places[selectedCell].latitude
         let longitude = places[selectedCell].longitude
+        let coordinates = (latitude, longitude)
         
-        getAllDistances(latitude, selectedLongitude: longitude, cellRow: selectedCell, count: places.count)
+        getAllDistances(coordinates, cellRow: selectedCell)
         
         performSegueWithIdentifier(segueIdentifier, sender: self)
     }
     
-    func getAllDistances(selectedLatitude: Double, selectedLongitude: Double, cellRow: Int, count: Int) {
-        var i = 0
-        while i < count {
-            
-            if i != cellRow {
-                
-                let otherLatitude = places[i].latitude
-                let otherLongitude = places[i].longitude
-                
-                let distance = getDistance(selectedLatitude, aLongitude: selectedLongitude, bLatitude: otherLatitude, bLongitude: otherLongitude)
-                
-                if distance <= 2 {
-                    placesToPass.append(places[i])
-                    cachedImagesToPass.append(cachedImages[i]!)
-                    distancesToPass.append(distance)
-                }
+    func getAllDistances(placeCoordinates: (Double, Double), cellRow: Int) {
+        for (i, _) in places.enumerate() {
+            guard i != cellRow else {
+                continue
             }
-            i += 1
+            
+            let otherLatitude = places[i].latitude
+            let otherLongitude = places[i].longitude
+            let otherCoordiantes = (otherLatitude, otherLongitude)
+            
+            let distance = getDistanceInKm(placeCoordinates, from: otherCoordiantes)
+            
+            guard distance <= 2 else {
+                continue
+            }
+            
+            placesToPass.append(places[i])
+            cachedImagesToPass.append(cachedImages[i]!)
+            distancesToPass.append(distance)
         }
     }
-
-    func getDistance(aLatitude: Double, aLongitude: Double, bLatitude: Double, bLongitude: Double) -> Double {
-        let selectedLocation = CLLocation(latitude: aLatitude, longitude: aLongitude)
-        let otherLocation = CLLocation(latitude: bLatitude, longitude: bLongitude)
+    
+    func getDistanceInKm(place: (Double, Double), from otherPlace: (Double, Double)) -> Double {
+        let firstLocation = CLLocation(latitude: place.0, longitude: place.1)
+        let seceondLocation = CLLocation(latitude: otherPlace.0, longitude: otherPlace.1)
         
-        return selectedLocation.distanceFromLocation(otherLocation) / 1000
+        return firstLocation.distanceFromLocation(seceondLocation) / 1000
     }
     
     func resizeImage(image: UIImage, newWidth: CGFloat, completion: (scaledImage: UIImage) -> ()) {
