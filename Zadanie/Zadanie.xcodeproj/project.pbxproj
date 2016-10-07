@@ -84,8 +84,8 @@
 				3AEDE4F71D51D5BE00A3661B /* LaunchScreen.storyboard */,
 				3AEDE4FA1D51D5BE00A3661B /* Info.plist */,
 				3A14C0351D59D179006C908E /* JsonTableViewController.swift */,
-				3A14C0371D59DD73006C908E /* MyTableViewCell.swift */,
 				3AFF78F31D5C8BB000B1509B /* PlacesTableVC.swift */,
+				3A14C0371D59DD73006C908E /* MyTableViewCell.swift */,
 				3A0F432B1D5DA6B400210784 /* Place.swift */,
 			);
 			path = Zadanie;
