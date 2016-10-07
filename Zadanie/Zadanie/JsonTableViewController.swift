@@ -46,7 +46,7 @@ class JsonTableViewController: UITableViewController {
     }
   }
   
-  func fillPlacesWithJson(json:JSON?) {
+  func fillPlacesWithJson(json: JSON?) {
     
     for object in (json?.array)! {
       let name = object["name"].stringValue
@@ -134,14 +134,14 @@ class JsonTableViewController: UITableViewController {
     
     let latitude = places[selectedCell].latitude
     let longitude = places[selectedCell].longitude
-    let coordinates = (latitude, longitude)
+    let coordinates = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
     
     getAllDistances(coordinates, cellRow: selectedCell)
     
     performSegueWithIdentifier(segueIdentifier, sender: self)
   }
   
-  func getAllDistances(placeCoordinates: (Double, Double), cellRow: Int) {
+  func getAllDistances(placeCoordinate: CLLocationCoordinate2D, cellRow: Int) {
     for (i, _) in places.enumerate() {
       guard i != cellRow else {
         continue
@@ -149,9 +149,9 @@ class JsonTableViewController: UITableViewController {
       
       let otherLatitude = places[i].latitude
       let otherLongitude = places[i].longitude
-      let otherCoordiantes = (otherLatitude, otherLongitude)
+      let otherCoordiante = CLLocationCoordinate2DMake(otherLatitude, otherLongitude)
       
-      let distance = getDistanceInKm(placeCoordinates, from: otherCoordiantes)
+      let distance = getDistanceInKm(from: placeCoordinate, to: otherCoordiante)
       
       guard distance <= 2 else {
         continue
@@ -163,11 +163,12 @@ class JsonTableViewController: UITableViewController {
     }
   }
   
-  func getDistanceInKm(place: (Double, Double), from otherPlace: (Double, Double)) -> Double {
-    let firstLocation = CLLocation(latitude: place.0, longitude: place.1)
-    let seceondLocation = CLLocation(latitude: otherPlace.0, longitude: otherPlace.1)
+  func getDistanceInKm(from place: CLLocationCoordinate2D, to otherPlace: CLLocationCoordinate2D) -> Double {
+    let firstLocation = CLLocation(latitude: place.latitude, longitude: place.longitude)
+    let secondLocation = CLLocation(latitude: otherPlace.latitude, longitude: otherPlace.longitude)
     
-    return firstLocation.distanceFromLocation(seceondLocation) / 1000
+    let distance = secondLocation.distanceFromLocation(firstLocation) / 1000
+    return Double(distance)
   }
   
   override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
