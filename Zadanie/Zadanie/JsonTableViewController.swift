@@ -50,11 +50,11 @@ class JsonTableViewController: UITableViewController {
     
     for object in (json?.array)! {
       let name = object["name"].stringValue
-      let image = object["pin_url"].stringValue
+      let imageUrl = object["pin_url"].stringValue
       let lat = object["coordinate"]["latitude"].doubleValue
       let lon = object["coordinate"]["longitude"].doubleValue
       
-      let place = Place(pinImageUrl: image, pinName: name, latitude: lat, longitude: lon)
+      let place = Place(name: name, pinUrl: imageUrl, latitude: lat, longitude: lon)
       places.append(place)
     }
   }
@@ -78,9 +78,9 @@ class JsonTableViewController: UITableViewController {
       return
     }
     
-    myCell.labelName.text = places[row].pinName
+    myCell.labelName.text = places[row].name
     
-    let pinUrl = places[row].pinImageUrl
+    let pinUrl = places[row].pinUrl
     
     guard let cachedImage = cachedImages[row] else {
       getPin(pinUrl, completion: { (image) in

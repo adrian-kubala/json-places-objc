@@ -27,7 +27,7 @@ class PlacesTableVC: UITableViewController {
     if let myCell = cell as? MyTableViewCell {
       
       myCell.placeImage.image = passedCachedImages[cellIndex]!
-      myCell.placeLabel.text = passedPlaces[cellIndex].pinName
+      myCell.placeLabel.text = passedPlaces[cellIndex].name
     }
     
     return cell
