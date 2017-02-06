@@ -32,21 +32,19 @@ class JsonTableViewController: UITableViewController {
     fetchJson(jsonUrl)
   }
   
-  func fetchJson(url: String) {
-    Alamofire.request(.GET, url).validate().responseJSON { response in
+  func fetchJson(_ url: String) {
+    Alamofire.request(url).validate().responseJSON { response in
       switch response.result {
-      case .Success:
-        if let value = response.result.value {
-          self.fillPlacesWithJson(JSON(value))
-          self.tableView.reloadData()
-        }
-      case .Failure(let error):
+      case .success(let value):
+        self.fillPlacesWithJson(JSON(value))
+        self.tableView.reloadData()
+      case .failure(let error):
         print(error)
       }
     }
   }
   
-  func fillPlacesWithJson(json: JSON?) {
+  func fillPlacesWithJson(_ json: JSON?) {
     
     for object in (json?.array)! {
       let name = object["name"].stringValue
@@ -59,21 +57,21 @@ class JsonTableViewController: UITableViewController {
     }
   }
   
-  override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+  override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return places.count
   }
   
-  override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+  override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cellRow = indexPath.row
     
-    let cell = tableView.dequeueReusableCellWithIdentifier(reuseIdentifier, forIndexPath: indexPath)
+    let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath)
     
     fillCell(cellRow, passedCell: cell)
     
     return cell
   }
   
-  func fillCell(row: Int, passedCell: UITableViewCell) {
+  func fillCell(_ row: Int, passedCell: UITableViewCell) {
     guard let myCell = passedCell as? MyTableViewCell else {
       return
     }
@@ -96,36 +94,35 @@ class JsonTableViewController: UITableViewController {
     myCell.pinImage.image = cachedImage
   }
   
-  func getPin(url: String, completion: (UIImage?) -> ()) {
-    Alamofire.request(.GET, url).response() {
-      (_, _, data, _) in
-      let image = UIImage(data: data! )
+  func getPin(_ url: String, completion: @escaping (UIImage?) -> ()) {
+    Alamofire.request(url).responseImage { (image) in
+      let image = UIImage(data: image.data!)
       completion(image)
     }
   }
   
-  func resizeImage(image: UIImage, newWidth: CGFloat, completion: (scaledImage: UIImage) -> ()) {
+  func resizeImage(_ image: UIImage, newWidth: CGFloat, completion: @escaping (_ scaledImage: UIImage) -> ()) {
     
-    let qualityOfServiceClass = QOS_CLASS_BACKGROUND
-    let backgroundQueue = dispatch_get_global_queue(qualityOfServiceClass, 0)
-    dispatch_async(backgroundQueue, {
+    let qualityOfServiceClass = DispatchQoS.QoSClass.background
+    let backgroundQueue = DispatchQueue.global(qos: qualityOfServiceClass)
+    backgroundQueue.async(execute: {
       // This is run on the background queue
       
       let scale = newWidth / image.size.width
       let newHeight = image.size.height * scale
-      UIGraphicsBeginImageContext(CGSizeMake(newWidth, newHeight))
-      image.drawInRect(CGRectMake(0, 0, newWidth, newHeight))
+      UIGraphicsBeginImageContext(CGSize(width: newWidth, height: newHeight))
+      image.draw(in: CGRect(x: 0, y: 0, width: newWidth, height: newHeight))
       let newImage = UIGraphicsGetImageFromCurrentImageContext()
       UIGraphicsEndImageContext()
       
-      dispatch_async(dispatch_get_main_queue(), { () -> Void in
+      DispatchQueue.main.async(execute: { () -> Void in
         // This is run on the main queue, after the previous code in outer block
-        completion(scaledImage: newImage)
+        completion(newImage!)
       })
     })
   }
   
-  override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+  override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     let selectedCell = indexPath.row
     
     placesToPass = []
@@ -138,11 +135,11 @@ class JsonTableViewController: UITableViewController {
     
     getAllDistances(coordinates, cellRow: selectedCell)
     
-    performSegueWithIdentifier(segueIdentifier, sender: self)
+    performSegue(withIdentifier: segueIdentifier, sender: self)
   }
   
-  func getAllDistances(placeCoordinate: CLLocationCoordinate2D, cellRow: Int) {
-    for (i, _) in places.enumerate() {
+  func getAllDistances(_ placeCoordinate: CLLocationCoordinate2D, cellRow: Int) {
+    for (i, _) in places.enumerated() {
       guard i != cellRow else {
         continue
       }
@@ -167,16 +164,16 @@ class JsonTableViewController: UITableViewController {
     let firstLocation = CLLocation(latitude: place.latitude, longitude: place.longitude)
     let secondLocation = CLLocation(latitude: otherPlace.latitude, longitude: otherPlace.longitude)
     
-    let distance = secondLocation.distanceFromLocation(firstLocation) / 1000
+    let distance = secondLocation.distance(from: firstLocation) / 1000
     return Double(distance)
   }
   
-  override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     guard segue.identifier == segueIdentifier else {
       return
     }
     
-    guard let destinationViewController = segue.destinationViewController as? PlacesTableVC else {
+    guard let destinationViewController = segue.destination as? PlacesTableVC else {
       return
     }
     
