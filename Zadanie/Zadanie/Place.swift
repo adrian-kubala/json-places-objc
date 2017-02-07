@@ -10,7 +10,7 @@ import Foundation
 
 struct Place {
   var name: String
-  var pinUrl: String
+  var pinURL: String
   var latitude: Double
   var longitude: Double
 }

@@ -28,11 +28,11 @@ class JsonTableViewController: UITableViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    let jsonUrl = "https://dl.dropboxusercontent.com/u/18389601/development/test/Location/locations.json"
-    fetchJson(jsonUrl)
+    let jsonURL = "https://dl.dropboxusercontent.com/u/18389601/development/test/Location/locations.json"
+    fetchJSON(fromURL: jsonURL)
   }
   
-  func fetchJson(_ url: String) {
+  func fetchJSON(fromURL url: String) {
     Alamofire.request(url).validate().responseJSON { response in
       switch response.result {
       case .success(let value):
@@ -52,7 +52,7 @@ class JsonTableViewController: UITableViewController {
       let lat = object["coordinate"]["latitude"].doubleValue
       let lon = object["coordinate"]["longitude"].doubleValue
       
-      let place = Place(name: name, pinUrl: imageUrl, latitude: lat, longitude: lon)
+      let place = Place(name: name, pinURL: imageUrl, latitude: lat, longitude: lon)
       places.append(place)
     }
   }
@@ -78,7 +78,7 @@ class JsonTableViewController: UITableViewController {
     
     myCell.labelName.text = places[row].name
     
-    let pinUrl = places[row].pinUrl
+    let pinUrl = places[row].pinURL
     
     guard let cachedImage = cachedImages[row] else {
       getPin(pinUrl, completion: { (image) in
