@@ -20,15 +20,10 @@ class NearbyPlacesViewController: UITableViewController {
   }
   
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath)
+    let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as! PlaceView
     
-    let cellIndex = indexPath.row
-    
-    if let myCell = cell as? PlaceView {
-      
-      myCell.pinImageView.image = passedCachedImages[cellIndex]!
-      myCell.label.text = passedPlaces[cellIndex].name
-    }
+    cell.pinImageView.image = passedCachedImages[indexPath.row]!
+    cell.label.text = passedPlaces[indexPath.row].name
     
     return cell
   }
