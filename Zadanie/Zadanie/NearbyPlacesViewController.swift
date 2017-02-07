@@ -1,5 +1,5 @@
 //
-//  PlacesTableVC.swift
+//  NearbyPlacesViewController.swift
 //  Zadanie
 //
 //  Created by Adrian on 11.08.2016.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PlacesTableVC: UITableViewController {
+class NearbyPlacesViewController: UITableViewController {
   var passedPlaces = [Place]()
   var passedCachedImages = [UIImage?]()
   var distances = [Double]()

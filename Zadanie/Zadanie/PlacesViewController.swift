@@ -173,7 +173,7 @@ class PlacesViewController: UITableViewController {
       return
     }
     
-    guard let destinationViewController = segue.destination as? PlacesTableVC else {
+    guard let destinationViewController = segue.destination as? NearbyPlacesViewController else {
       return
     }
     
