@@ -26,8 +26,8 @@ class NearbyPlacesViewController: UITableViewController {
     
     if let myCell = cell as? PlaceView {
       
-      myCell.placeImage.image = passedCachedImages[cellIndex]!
-      myCell.placeLabel.text = passedPlaces[cellIndex].name
+      myCell.pinImageView.image = passedCachedImages[cellIndex]!
+      myCell.label.text = passedPlaces[cellIndex].name
     }
     
     return cell

@@ -76,7 +76,7 @@ class PlacesViewController: UITableViewController {
       return
     }
     
-    myCell.labelName.text = places[row].name
+    myCell.label.text = places[row].name
     
     let pinUrl = places[row].pinURL
     
@@ -85,13 +85,13 @@ class PlacesViewController: UITableViewController {
         
         self.resizeImage(image!, newWidth: 30) { (scaledImage) in
           self.cachedImages[row] = scaledImage
-          myCell.pinImage.image = self.cachedImages[row]!
+          myCell.pinImageView.image = self.cachedImages[row]!
         }
       })
       return
     }
     
-    myCell.pinImage.image = cachedImage
+    myCell.pinImageView.image = cachedImage
   }
   
   func getPin(_ url: String, completion: @escaping (UIImage?) -> ()) {

@@ -22,17 +22,10 @@
                                 <rect key="frame" x="0.0" y="30" width="375" height="50"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Lhq-QA-Eak" id="lJh-50-6mr">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="49.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XUY-lo-f62">
-                                            <rect key="frame" x="10" y="9" width="30" height="30"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="30" id="eat-Ku-IL7"/>
-                                                <constraint firstAttribute="width" constant="30" id="hMt-b9-EJn"/>
-                                            </constraints>
-                                        </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pwH-ZH-cyc">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pwH-ZH-cyc" userLabel="Label">
                                             <rect key="frame" x="50" y="9" width="315" height="30"/>
                                             <color key="backgroundColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <attributedString key="attributedText">
@@ -46,6 +39,13 @@
                                             </attributedString>
                                             <color key="highlightedColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XUY-lo-f62" userLabel="Pin Image View">
+                                            <rect key="frame" x="10" y="9" width="30" height="30"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="30" id="eat-Ku-IL7"/>
+                                                <constraint firstAttribute="width" constant="30" id="hMt-b9-EJn"/>
+                                            </constraints>
+                                        </imageView>
                                     </subviews>
                                     <constraints>
                                         <constraint firstAttribute="trailing" secondItem="pwH-ZH-cyc" secondAttribute="trailing" constant="10" id="16U-xy-cv6"/>
@@ -57,8 +57,8 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="labelName" destination="pwH-ZH-cyc" id="Dfe-bT-qvw"/>
-                                    <outlet property="pinImage" destination="XUY-lo-f62" id="Os2-54-ssU"/>
+                                    <outlet property="label" destination="pwH-ZH-cyc" id="Ipw-9I-4hK"/>
+                                    <outlet property="pinImageView" destination="XUY-lo-f62" id="lsN-fC-BS1"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -90,10 +90,10 @@
                                 <rect key="frame" x="0.0" y="30" width="375" height="50"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="UFJ-zL-leU" id="O1C-bm-k6X">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="49.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="88I-FL-x3H">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="88I-FL-x3H" userLabel="Label">
                                             <rect key="frame" x="10" y="9" width="315" height="30"/>
                                             <color key="backgroundColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <attributedString key="attributedText">
@@ -107,7 +107,7 @@
                                             </attributedString>
                                             <color key="highlightedColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </label>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="izl-ze-Ibf">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="izl-ze-Ibf" userLabel="Pin Image View">
                                             <rect key="frame" x="335" y="9" width="30" height="30"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="30" id="QYJ-ys-YqR"/>
@@ -133,8 +133,8 @@
                                     </variation>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="placeImage" destination="izl-ze-Ibf" id="M8b-om-Oux"/>
-                                    <outlet property="placeLabel" destination="88I-FL-x3H" id="Yrq-4r-PtK"/>
+                                    <outlet property="label" destination="88I-FL-x3H" id="Mjr-1m-ika"/>
+                                    <outlet property="pinImageView" destination="izl-ze-Ibf" id="K0Z-GG-kTt"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -153,7 +153,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="jQA-Dy-mYe" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="H9h-7P-YW6">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="H9h-7P-YW6">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

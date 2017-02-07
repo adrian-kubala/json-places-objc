@@ -9,9 +9,6 @@
 import UIKit
 
 class PlaceView: UITableViewCell {
-  @IBOutlet weak var pinImage: UIImageView!
-  @IBOutlet weak var labelName: UILabel!
-  
-  @IBOutlet weak var placeImage: UIImageView!
-  @IBOutlet weak var placeLabel: UILabel!
+  @IBOutlet weak var label: UILabel!
+  @IBOutlet weak var pinImageView: UIImageView!
 }
