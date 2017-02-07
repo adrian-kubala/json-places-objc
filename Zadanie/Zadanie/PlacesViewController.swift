@@ -1,5 +1,5 @@
 //
-//  JsonTableViewController.swift
+//  PlacesViewController.swift
 //  Zadanie
 //
 //  Created by Adrian on 09.08.2016.
@@ -12,7 +12,7 @@ import SwiftyJSON
 import AlamofireImage
 import CoreLocation
 
-class JsonTableViewController: UITableViewController {
+class PlacesViewController: UITableViewController {
   
   let reuseIdentifier = "cell"
   let segueIdentifier = "placesSegue"
