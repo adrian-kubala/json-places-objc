@@ -105,8 +105,7 @@ class PlacesViewController: UITableViewController {
     
     let qualityOfServiceClass = DispatchQoS.QoSClass.background
     let backgroundQueue = DispatchQueue.global(qos: qualityOfServiceClass)
-    backgroundQueue.async(execute: {
-      // This is run on the background queue
+    backgroundQueue.async {
       
       let scale = newWidth / image.size.width
       let newHeight = image.size.height * scale
@@ -115,11 +114,10 @@ class PlacesViewController: UITableViewController {
       let newImage = UIGraphicsGetImageFromCurrentImageContext()
       UIGraphicsEndImageContext()
       
-      DispatchQueue.main.async(execute: { () -> Void in
-        // This is run on the main queue, after the previous code in outer block
+      DispatchQueue.main.async {
         completion(newImage!)
-      })
-    })
+      }
+    }
   }
   
   override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
