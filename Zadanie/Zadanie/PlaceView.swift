@@ -1,5 +1,5 @@
 //
-//  MyTableViewCell.swift
+//  PlaceView.swift
 //  Zadanie
 //
 //  Created by Adrian on 09.08.2016.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MyTableViewCell: UITableViewCell {
+class PlaceView: UITableViewCell {
   @IBOutlet weak var pinImage: UIImageView!
   @IBOutlet weak var labelName: UILabel!
   

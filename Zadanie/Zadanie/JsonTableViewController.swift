@@ -72,7 +72,7 @@ class JsonTableViewController: UITableViewController {
   }
   
   func fillCell(_ row: Int, passedCell: UITableViewCell) {
-    guard let myCell = passedCell as? MyTableViewCell else {
+    guard let myCell = passedCell as? PlaceView else {
       return
     }
     
