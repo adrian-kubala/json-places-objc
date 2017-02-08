@@ -17,11 +17,11 @@ class JSONParser {
     source = url
   }
   
-  func fetch(completion: @escaping (_ success: Any?, _ error: Error?) -> ()) {
+  func fetch(completion: @escaping (_ json: JSON?, _ error: Error?) -> ()) {
     Alamofire.request(source).validate().responseJSON { response in
       switch response.result {
       case .success(let value):
-        completion(value, nil)
+        completion(JSON(value), nil)
       case .failure(let error):
         completion(nil, error)
       }

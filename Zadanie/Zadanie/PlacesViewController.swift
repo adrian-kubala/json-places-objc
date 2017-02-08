@@ -24,26 +24,14 @@ class PlacesViewController: UITableViewController {
     
     let jsonURL = URL(string: "https://dl.dropboxusercontent.com/u/18389601/development/test/Location/locations.json")
     let parser = JSONParser(withURL: jsonURL!)
-    parser.fetch { [weak self] (success, error) in
+    parser.fetch { [weak self] (json, error) in
       if let error = error {
         print(error.localizedDescription)
         return
       }
       
-      if let success = success {
-        self?.fillPlacesWithJson(JSON(success))
-      }
-    }
-  }
-  
-  func fetchJSON(fromURL url: String) {
-    Alamofire.request(url).validate().responseJSON { response in
-      switch response.result {
-      case .success(let value):
-        self.fillPlacesWithJson(JSON(value))
-        self.tableView.reloadData()
-      case .failure(let error):
-        print(error)
+      if let json = json {
+        self?.fillPlacesWithJson(json)
       }
     }
   }
