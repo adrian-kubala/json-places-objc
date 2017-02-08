@@ -12,10 +12,6 @@ import SwiftyJSON
 import CoreLocation
 
 class PlacesViewController: UITableViewController {
-  
-  let reuseIdentifier = "cell"
-  let segueIdentifier = "placesSegue"
-  
   var places: [Place] = []
   var matchedPlaces: [Place] = []
   
@@ -62,7 +58,7 @@ class PlacesViewController: UITableViewController {
   }
   
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as! PlaceView
+    let cell = tableView.dequeueReusableCell(withIdentifier: "PlaceView", for: indexPath) as! PlaceView
     
     cell.label.text = places[indexPath.row].name
     cell.pinImageView.image = places[indexPath.row].pinImage
@@ -81,7 +77,7 @@ class PlacesViewController: UITableViewController {
     
     getAllDistances(coordinates, cellRow: selectedCell)
     
-    performSegue(withIdentifier: segueIdentifier, sender: self)
+    performSegue(withIdentifier: "ShowNearbyPlaces", sender: self)
   }
   
   func getAllDistances(_ placeCoordinate: CLLocationCoordinate2D, cellRow: Int) {
