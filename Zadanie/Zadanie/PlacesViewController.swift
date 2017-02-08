@@ -59,8 +59,6 @@ class PlacesViewController: UITableViewController {
           self.tableView.reloadData()
         }
       }
-      
-
     }
   }
   
@@ -70,14 +68,11 @@ class PlacesViewController: UITableViewController {
   
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as! PlaceView
-    fillCell(cell, atRow: indexPath.row)
+    
+    cell.label.text = places[indexPath.row].name
+    cell.pinImageView.image = places[indexPath.row].pinImage
     
     return cell
-  }
-  
-  func fillCell(_ cell: PlaceView, atRow row: Int) {
-    cell.label.text = places[row].name
-    cell.pinImageView.image = places[row].pinImage
   }
   
   override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
