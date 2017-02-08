@@ -10,7 +10,6 @@ import UIKit
 
 class NearbyPlacesViewController: UITableViewController {
   var passedPlaces = [Place]()
-  var passedCachedImages = [UIImage?]()
   var distances = [Double]()
   
   var reuseIdentifier = "placesTableCell"
@@ -22,7 +21,7 @@ class NearbyPlacesViewController: UITableViewController {
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as! PlaceView
     
-    cell.pinImageView.image = passedCachedImages[indexPath.row]!
+    cell.pinImageView.image = passedPlaces[indexPath.row].pinImage
     cell.label.text = passedPlaces[indexPath.row].name
     
     return cell
