@@ -10,7 +10,6 @@ import UIKit
 
 class NearbyPlacesViewController: UITableViewController {
   var passedPlaces = [Place]()
-  var distances = [Double]()
   
   var reuseIdentifier = "placesTableCell"
   
@@ -30,7 +29,7 @@ class NearbyPlacesViewController: UITableViewController {
   override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     let latitude = passedPlaces[indexPath.row].latitude
     let longitude = passedPlaces[indexPath.row].longitude
-    let distance = distances[indexPath.row]
+    let distance = passedPlaces[indexPath.row].distance!
     
     let alert = UIAlertController(title: "Współrzędne", message: "Szerokość: \(latitude)\nDługość: \(longitude)\nOdległość: \(String(format:"%.2f", distance)) km", preferredStyle: UIAlertControllerStyle.alert)
     alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))

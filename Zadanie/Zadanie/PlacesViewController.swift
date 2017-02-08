@@ -19,8 +19,6 @@ class PlacesViewController: UITableViewController {
   var places = [Place]()
   var placesToPass = [Place]()
   
-  var distancesToPass = [Double]()
-  
   override func viewDidLoad() {
     super.viewDidLoad()
     
@@ -79,7 +77,6 @@ class PlacesViewController: UITableViewController {
     let selectedCell = indexPath.row
     
     placesToPass = []
-    distancesToPass = []
     
     let latitude = places[selectedCell].latitude
     let longitude = places[selectedCell].longitude
@@ -106,8 +103,9 @@ class PlacesViewController: UITableViewController {
         continue
       }
       
-      placesToPass.append(places[i])
-      distancesToPass.append(distance)
+      var place = places[i]
+      place.distance = distance
+      placesToPass.append(place)
     }
   }
   
@@ -121,6 +119,5 @@ class PlacesViewController: UITableViewController {
     }
     
     destinationViewController.passedPlaces = placesToPass
-    destinationViewController.distances = distancesToPass
   }
 }
