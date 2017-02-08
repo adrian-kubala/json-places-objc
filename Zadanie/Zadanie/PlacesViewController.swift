@@ -86,7 +86,7 @@ class PlacesViewController: UITableViewController {
     cell.pinImageView.image = cachedImage
   }
   
-
+  
   
   override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     let selectedCell = indexPath.row
@@ -112,9 +112,9 @@ class PlacesViewController: UITableViewController {
       
       let otherLatitude = places[i].latitude
       let otherLongitude = places[i].longitude
-      let otherCoordiante = CLLocationCoordinate2DMake(otherLatitude, otherLongitude)
+      let otherCoordinate = CLLocationCoordinate2DMake(otherLatitude, otherLongitude)
       
-      let distance = getDistanceInKm(from: placeCoordinate, to: otherCoordiante)
+      let distance = placeCoordinate.distanceInKMTo(otherCoordinate)
       
       guard distance <= 2 else {
         continue
@@ -124,14 +124,6 @@ class PlacesViewController: UITableViewController {
       cachedImagesToPass.append(cachedImages[i]!)
       distancesToPass.append(distance)
     }
-  }
-  
-  func getDistanceInKm(from place: CLLocationCoordinate2D, to otherPlace: CLLocationCoordinate2D) -> Double {
-    let firstLocation = CLLocation(latitude: place.latitude, longitude: place.longitude)
-    let secondLocation = CLLocation(latitude: otherPlace.latitude, longitude: otherPlace.longitude)
-    
-    let distance = secondLocation.distance(from: firstLocation) / 1000
-    return Double(distance)
   }
   
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
