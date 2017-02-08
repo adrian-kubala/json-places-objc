@@ -16,8 +16,8 @@ class PlacesViewController: UITableViewController {
   let reuseIdentifier = "cell"
   let segueIdentifier = "placesSegue"
   
-  var places = [Place]()
-  var placesToPass = [Place]()
+  var places: [Place] = []
+  var matchedPlaces: [Place] = []
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -76,7 +76,7 @@ class PlacesViewController: UITableViewController {
   override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     let selectedCell = indexPath.row
     
-    placesToPass = []
+    matchedPlaces = []
     
     let latitude = places[selectedCell].latitude
     let longitude = places[selectedCell].longitude
@@ -105,7 +105,7 @@ class PlacesViewController: UITableViewController {
       
       var place = places[i]
       place.distance = distance
-      placesToPass.append(place)
+      matchedPlaces.append(place)
     }
   }
   
@@ -118,6 +118,6 @@ class PlacesViewController: UITableViewController {
       return
     }
     
-    destinationViewController.passedPlaces = placesToPass
+    destinationViewController.passedPlaces = matchedPlaces
   }
 }
