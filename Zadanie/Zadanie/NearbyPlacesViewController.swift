@@ -30,7 +30,13 @@ class NearbyPlacesViewController: UITableViewController {
   }
   
   override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    
+    performSegue(withIdentifier: "ShowPlaceViewController", sender: indexPath)
+  }
+  
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    let placeViewController = segue.destination as! PlaceViewController
+    let cellRow = sender as! IndexPath
+    placeViewController.place = nearbyPlaces[cellRow.row]
   }
   
   func showPlaceDetails(recognizer: UIGestureRecognizer) {
