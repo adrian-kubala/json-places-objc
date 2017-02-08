@@ -19,6 +19,7 @@ class PlacesViewController: UITableViewController {
     super.viewDidLoad()
     
     let jsonURL = URL(string: "https://dl.dropboxusercontent.com/u/18389601/development/test/Location/locations.json")
+    
     let parser = JSONParser(withURL: jsonURL!)
     parser.fetch { [weak self] (json, error) in
       if let error = error {
@@ -32,7 +33,7 @@ class PlacesViewController: UITableViewController {
     }
   }
   
-  func fillPlacesWithJson(_ json: JSON) {
+  func fillPlacesWithJSON(_ json: JSON) {
     for object in json.arrayValue {
       let name = object["name"].stringValue
       let imageUrl = URL(string: object["pin_url"].stringValue)
