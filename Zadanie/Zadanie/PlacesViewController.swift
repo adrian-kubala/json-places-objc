@@ -68,25 +68,22 @@ class PlacesViewController: UITableViewController {
   }
   
   override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    let selectedCell = indexPath.row
-    
     matchedPlaces = []
     
-    let location = places[indexPath.row].coordinates
-    
-    getAllDistances(location, cellRow: selectedCell)
+    let location = places[indexPath.row].location
+    getAllDistancesFrom(location: location, cellRow: indexPath.row)
     
     performSegue(withIdentifier: "ShowNearbyPlaces", sender: self)
   }
   
-  func getAllDistances(_ placeCoordinate: CLLocation, cellRow: Int) {
+  func getAllDistancesFrom(location: CLLocation, cellRow: Int) {
     for (i, place) in places.enumerated() {
       if i == cellRow {
         continue
       }
       
-      let otherLocation = place.coordinates
-      let distance = placeCoordinate.distanceInKMTo(otherLocation)
+      let otherLocation = place.location
+      let distance = location.distanceInKMTo(otherLocation)
       
       if distance > 2 {
         continue

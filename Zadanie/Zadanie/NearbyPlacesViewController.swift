@@ -28,7 +28,7 @@ class NearbyPlacesViewController: UITableViewController {
   
   override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     
-    let location = nearbyPlaces[indexPath.row].coordinates
+    let location = nearbyPlaces[indexPath.row].location
     let latitude = location.coordinate.latitude
     let longitude = location.coordinate.longitude
     let distance = nearbyPlaces[indexPath.row].distance!
