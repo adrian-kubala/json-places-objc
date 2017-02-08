@@ -6,11 +6,11 @@
 //  Copyright © 2016 Adrian. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 struct Place {
   var name: String
-  var pinURL: String
+  var pinImage: UIImage?
   var latitude: Double
   var longitude: Double
 }

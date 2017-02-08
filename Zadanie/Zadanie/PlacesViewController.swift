@@ -16,9 +16,6 @@ class PlacesViewController: UITableViewController {
   let reuseIdentifier = "cell"
   let segueIdentifier = "placesSegue"
   
-  var cachedImages = [Int : UIImage?]()
-  var cachedImagesToPass = [UIImage?]()
-  
   var places = [Place]()
   var placesToPass = [Place]()
   
@@ -47,12 +44,23 @@ class PlacesViewController: UITableViewController {
     
     for object in (json?.array)! {
       let name = object["name"].stringValue
-      let imageUrl = object["pin_url"].stringValue
+      let imageUrl = URL(string: object["pin_url"].stringValue)
       let lat = object["coordinate"]["latitude"].doubleValue
       let lon = object["coordinate"]["longitude"].doubleValue
       
-      let place = Place(name: name, pinURL: imageUrl, latitude: lat, longitude: lon)
-      places.append(place)
+      var pinImage: UIImage?
+      imageUrl?.getImage { (image) in
+        image?.resizeImage(newWidth: 30) { (scaledImage) in
+          pinImage = scaledImage
+          
+          let place = Place(name: name, pinImage: pinImage, latitude: lat, longitude: lon)
+          self.places.append(place)
+          
+          self.tableView.reloadData()
+        }
+      }
+      
+
     }
   }
   
@@ -69,30 +77,13 @@ class PlacesViewController: UITableViewController {
   
   func fillCell(_ cell: PlaceView, atRow row: Int) {
     cell.label.text = places[row].name
-    
-    let pinURL = URL(string: places[row].pinURL)
-    
-    guard let cachedImage = cachedImages[row] else {
-      pinURL?.getImage { (image) in
-        
-        image?.resizeImage(newWidth: 30) { (scaledImage) in
-          self.cachedImages[row] = scaledImage
-          cell.pinImageView.image = self.cachedImages[row]!
-        }
-      }
-      return
-    }
-    
-    cell.pinImageView.image = cachedImage
+    cell.pinImageView.image = places[row].pinImage
   }
-  
-  
   
   override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     let selectedCell = indexPath.row
     
     placesToPass = []
-    cachedImagesToPass = []
     distancesToPass = []
     
     let latitude = places[selectedCell].latitude
@@ -121,7 +112,6 @@ class PlacesViewController: UITableViewController {
       }
       
       placesToPass.append(places[i])
-      cachedImagesToPass.append(cachedImages[i]!)
       distancesToPass.append(distance)
     }
   }
@@ -136,7 +126,6 @@ class PlacesViewController: UITableViewController {
     }
     
     destinationViewController.passedPlaces = placesToPass
-    destinationViewController.passedCachedImages = cachedImagesToPass
     destinationViewController.distances = distancesToPass
   }
 }
