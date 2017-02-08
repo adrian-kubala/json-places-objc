@@ -9,7 +9,6 @@
 import UIKit
 import Alamofire
 import SwiftyJSON
-import AlamofireImage
 import CoreLocation
 
 class PlacesViewController: UITableViewController {
@@ -78,28 +77,23 @@ class PlacesViewController: UITableViewController {
     
     myCell.label.text = places[row].name
     
-    let pinUrl = places[row].pinURL
+    let pinURL = URL(string: places[row].pinURL)
     
     guard let cachedImage = cachedImages[row] else {
-      getPin(pinUrl, completion: { (image) in
+      pinURL?.getImage { (image) in
         
         image?.resizeImage(newWidth: 30) { (scaledImage) in
           self.cachedImages[row] = scaledImage
           myCell.pinImageView.image = self.cachedImages[row]!
         }
-      })
+      }
       return
     }
     
     myCell.pinImageView.image = cachedImage
   }
   
-  func getPin(_ url: String, completion: @escaping (UIImage?) -> ()) {
-    Alamofire.request(url).responseImage { (image) in
-      let image = UIImage(data: image.data!)
-      completion(image)
-    }
-  }
+
   
   override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     let selectedCell = indexPath.row
