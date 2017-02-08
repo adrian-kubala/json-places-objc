@@ -118,6 +118,6 @@ class PlacesViewController: UITableViewController {
       return
     }
     
-    destinationViewController.passedPlaces = matchedPlaces
+    destinationViewController.nearbyPlaces = matchedPlaces
   }
 }
