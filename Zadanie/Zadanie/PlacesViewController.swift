@@ -83,7 +83,7 @@ class PlacesViewController: UITableViewController {
   
   func getAllDistances(_ placeCoordinate: CLLocationCoordinate2D, cellRow: Int) {
     for (i, place) in places.enumerated() {
-      guard i != cellRow else {
+      if i == cellRow {
         continue
       }
       
@@ -93,7 +93,7 @@ class PlacesViewController: UITableViewController {
       
       let distance = placeCoordinate.distanceInKMTo(otherCoordinate)
       
-      guard distance <= 2 else {
+      if distance > 2 {
         continue
       }
       
