@@ -1,5 +1,5 @@
 //
-//  CLLocationCoordinate2D+distance.swift
+//  CLLocation.swift
 //  Zadanie
 //
 //  Created by Adrian Kubała on 08.02.2017.
