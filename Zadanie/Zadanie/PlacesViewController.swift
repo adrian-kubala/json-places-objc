@@ -83,7 +83,7 @@ class PlacesViewController: UITableViewController {
     guard let cachedImage = cachedImages[row] else {
       getPin(pinUrl, completion: { (image) in
         
-        self.resizeImage(image!, newWidth: 30) { (scaledImage) in
+        image?.resizeImage(newWidth: 30) { (scaledImage) in
           self.cachedImages[row] = scaledImage
           myCell.pinImageView.image = self.cachedImages[row]!
         }
@@ -98,25 +98,6 @@ class PlacesViewController: UITableViewController {
     Alamofire.request(url).responseImage { (image) in
       let image = UIImage(data: image.data!)
       completion(image)
-    }
-  }
-  
-  func resizeImage(_ image: UIImage, newWidth: CGFloat, completion: @escaping (_ scaledImage: UIImage) -> ()) {
-    
-    let qualityOfServiceClass = DispatchQoS.QoSClass.background
-    let backgroundQueue = DispatchQueue.global(qos: qualityOfServiceClass)
-    backgroundQueue.async {
-      
-      let scale = newWidth / image.size.width
-      let newHeight = image.size.height * scale
-      UIGraphicsBeginImageContext(CGSize(width: newWidth, height: newHeight))
-      image.draw(in: CGRect(x: 0, y: 0, width: newWidth, height: newHeight))
-      let newImage = UIGraphicsGetImageFromCurrentImageContext()
-      UIGraphicsEndImageContext()
-      
-      DispatchQueue.main.async {
-        completion(newImage!)
-      }
     }
   }
   
