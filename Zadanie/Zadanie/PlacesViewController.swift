@@ -36,9 +36,8 @@ class PlacesViewController: UITableViewController {
     }
   }
   
-  func fillPlacesWithJson(_ json: JSON?) {
-    
-    for object in (json?.array)! {
+  func fillPlacesWithJson(_ json: JSON) {
+    for object in json.arrayValue {
       let name = object["name"].stringValue
       let imageUrl = URL(string: object["pin_url"].stringValue)
       let lat = object["coordinate"]["latitude"].doubleValue
