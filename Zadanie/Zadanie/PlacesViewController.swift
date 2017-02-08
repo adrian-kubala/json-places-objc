@@ -53,7 +53,7 @@ class PlacesViewController: UITableViewController {
         image?.resizeImage(newWidth: 30) { (scaledImage) in
           pinImage = scaledImage
           
-          let place = Place(name: name, pinImage: pinImage, latitude: lat, longitude: lon)
+          let place = Place(name: name, pinImage: pinImage, latitude: lat, longitude: lon, distance: nil)
           self.places.append(place)
           
           self.tableView.reloadData()
