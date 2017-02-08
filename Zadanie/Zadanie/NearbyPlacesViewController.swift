@@ -11,6 +11,11 @@ import UIKit
 class NearbyPlacesViewController: UITableViewController {
   var nearbyPlaces: [Place] = []
   
+  override func viewDidLoad() {
+    let recognizer = UILongPressGestureRecognizer.init(target: self, action: #selector(showPlaceDetails(recognizer:)))
+    tableView.addGestureRecognizer(recognizer)
+  }
+  
   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return nearbyPlaces.count
   }
@@ -25,15 +30,24 @@ class NearbyPlacesViewController: UITableViewController {
   }
   
   override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    let location = nearbyPlaces[indexPath.row].location
-    let latitude = location.coordinate.latitude
-    let longitude = location.coordinate.longitude
-    let distance = nearbyPlaces[indexPath.row].distance!
     
-    let alert = UIAlertController(title: "Współrzędne",
-                                  message: "Szerokość: \(latitude)\nDługość: \(longitude)\nOdległość: \(String(format:"%.2f", distance)) km",
-                                  preferredStyle: UIAlertControllerStyle.alert)
-    alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
-    present(alert, animated: true, completion: nil)
+  }
+  
+  func showPlaceDetails(recognizer: UIGestureRecognizer) {
+    if recognizer.state == UIGestureRecognizerState.began {
+      let swipeLocation = recognizer.location(in: tableView)
+      if let swipedIndexPath = tableView.indexPathForRow(at: swipeLocation) {
+        let location = nearbyPlaces[swipedIndexPath.row].location
+        let latitude = location.coordinate.latitude
+        let longitude = location.coordinate.longitude
+        let distance = nearbyPlaces[swipedIndexPath.row].distance!
+        
+        let alert = UIAlertController(title: "Współrzędne",
+                                      message: "Szerokość: \(latitude)\nDługość: \(longitude)\nOdległość: \(String(format:"%.2f", distance)) km",
+          preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+        present(alert, animated: true, completion: nil)
+      }
+    }
   }
 }
