@@ -28,7 +28,7 @@ class PlacesViewController: UITableViewController {
       }
       
       if let json = json {
-        self?.fillPlacesWithJson(json)
+        self?.fillPlacesWithJSON(json)
       }
     }
   }
@@ -82,13 +82,13 @@ class PlacesViewController: UITableViewController {
   }
   
   func getAllDistances(_ placeCoordinate: CLLocationCoordinate2D, cellRow: Int) {
-    for (i, _) in places.enumerated() {
+    for (i, place) in places.enumerated() {
       guard i != cellRow else {
         continue
       }
       
-      let otherLatitude = places[i].latitude
-      let otherLongitude = places[i].longitude
+      let otherLatitude = place.latitude
+      let otherLongitude = place.longitude
       let otherCoordinate = CLLocationCoordinate2DMake(otherLatitude, otherLongitude)
       
       let distance = placeCoordinate.distanceInKMTo(otherCoordinate)
@@ -97,9 +97,9 @@ class PlacesViewController: UITableViewController {
         continue
       }
       
-      var place = places[i]
-      place.distance = distance
-      matchedPlaces.append(place)
+      var matchedPlace = place
+      matchedPlace.distance = distance
+      matchedPlaces.append(matchedPlace)
     }
   }
   
