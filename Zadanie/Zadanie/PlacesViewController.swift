@@ -1,5 +1,5 @@
 //
-//  JsonTableViewController.swift
+//  PlacesViewController.swift
 //  Zadanie
 //
 //  Created by Adrian on 09.08.2016.
@@ -9,10 +9,9 @@
 import UIKit
 import Alamofire
 import SwiftyJSON
-import AlamofireImage
 import CoreLocation
 
-class JsonTableViewController: UITableViewController {
+class PlacesViewController: UITableViewController {
   
   let reuseIdentifier = "cell"
   let segueIdentifier = "placesSegue"
@@ -62,65 +61,32 @@ class JsonTableViewController: UITableViewController {
   }
   
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let cellRow = indexPath.row
-    
-    let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath)
-    
-    fillCell(cellRow, passedCell: cell)
+    let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as! PlaceView
+    fillCell(cell, atRow: indexPath.row)
     
     return cell
   }
   
-  func fillCell(_ row: Int, passedCell: UITableViewCell) {
-    guard let myCell = passedCell as? MyTableViewCell else {
-      return
-    }
+  func fillCell(_ cell: PlaceView, atRow row: Int) {
+    cell.label.text = places[row].name
     
-    myCell.labelName.text = places[row].name
-    
-    let pinUrl = places[row].pinURL
+    let pinURL = URL(string: places[row].pinURL)
     
     guard let cachedImage = cachedImages[row] else {
-      getPin(pinUrl, completion: { (image) in
+      pinURL?.getImage { (image) in
         
-        self.resizeImage(image!, newWidth: 30) { (scaledImage) in
+        image?.resizeImage(newWidth: 30) { (scaledImage) in
           self.cachedImages[row] = scaledImage
-          myCell.pinImage.image = self.cachedImages[row]!
+          cell.pinImageView.image = self.cachedImages[row]!
         }
-      })
+      }
       return
     }
     
-    myCell.pinImage.image = cachedImage
+    cell.pinImageView.image = cachedImage
   }
   
-  func getPin(_ url: String, completion: @escaping (UIImage?) -> ()) {
-    Alamofire.request(url).responseImage { (image) in
-      let image = UIImage(data: image.data!)
-      completion(image)
-    }
-  }
   
-  func resizeImage(_ image: UIImage, newWidth: CGFloat, completion: @escaping (_ scaledImage: UIImage) -> ()) {
-    
-    let qualityOfServiceClass = DispatchQoS.QoSClass.background
-    let backgroundQueue = DispatchQueue.global(qos: qualityOfServiceClass)
-    backgroundQueue.async(execute: {
-      // This is run on the background queue
-      
-      let scale = newWidth / image.size.width
-      let newHeight = image.size.height * scale
-      UIGraphicsBeginImageContext(CGSize(width: newWidth, height: newHeight))
-      image.draw(in: CGRect(x: 0, y: 0, width: newWidth, height: newHeight))
-      let newImage = UIGraphicsGetImageFromCurrentImageContext()
-      UIGraphicsEndImageContext()
-      
-      DispatchQueue.main.async(execute: { () -> Void in
-        // This is run on the main queue, after the previous code in outer block
-        completion(newImage!)
-      })
-    })
-  }
   
   override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     let selectedCell = indexPath.row
@@ -146,9 +112,9 @@ class JsonTableViewController: UITableViewController {
       
       let otherLatitude = places[i].latitude
       let otherLongitude = places[i].longitude
-      let otherCoordiante = CLLocationCoordinate2DMake(otherLatitude, otherLongitude)
+      let otherCoordinate = CLLocationCoordinate2DMake(otherLatitude, otherLongitude)
       
-      let distance = getDistanceInKm(from: placeCoordinate, to: otherCoordiante)
+      let distance = placeCoordinate.distanceInKMTo(otherCoordinate)
       
       guard distance <= 2 else {
         continue
@@ -160,20 +126,12 @@ class JsonTableViewController: UITableViewController {
     }
   }
   
-  func getDistanceInKm(from place: CLLocationCoordinate2D, to otherPlace: CLLocationCoordinate2D) -> Double {
-    let firstLocation = CLLocation(latitude: place.latitude, longitude: place.longitude)
-    let secondLocation = CLLocation(latitude: otherPlace.latitude, longitude: otherPlace.longitude)
-    
-    let distance = secondLocation.distance(from: firstLocation) / 1000
-    return Double(distance)
-  }
-  
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     guard segue.identifier == segueIdentifier else {
       return
     }
     
-    guard let destinationViewController = segue.destination as? PlacesTableVC else {
+    guard let destinationViewController = segue.destination as? NearbyPlacesViewController else {
       return
     }
     

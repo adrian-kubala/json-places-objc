@@ -1,5 +1,5 @@
 //
-//  PlacesTableVC.swift
+//  NearbyPlacesViewController.swift
 //  Zadanie
 //
 //  Created by Adrian on 11.08.2016.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PlacesTableVC: UITableViewController {
+class NearbyPlacesViewController: UITableViewController {
   var passedPlaces = [Place]()
   var passedCachedImages = [UIImage?]()
   var distances = [Double]()
@@ -20,15 +20,10 @@ class PlacesTableVC: UITableViewController {
   }
   
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath)
+    let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as! PlaceView
     
-    let cellIndex = indexPath.row
-    
-    if let myCell = cell as? MyTableViewCell {
-      
-      myCell.placeImage.image = passedCachedImages[cellIndex]!
-      myCell.placeLabel.text = passedPlaces[cellIndex].name
-    }
+    cell.pinImageView.image = passedCachedImages[indexPath.row]!
+    cell.label.text = passedPlaces[indexPath.row].name
     
     return cell
   }
