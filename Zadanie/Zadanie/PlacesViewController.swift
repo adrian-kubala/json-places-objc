@@ -107,14 +107,7 @@ class PlacesViewController: UITableViewController {
   }
   
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    guard segue.identifier == segueIdentifier else {
-      return
-    }
-    
-    guard let destinationViewController = segue.destination as? NearbyPlacesViewController else {
-      return
-    }
-    
-    destinationViewController.nearbyPlaces = matchedPlaces
+    let nearbyPlacesViewController = segue.destination as! NearbyPlacesViewController
+    nearbyPlacesViewController.nearbyPlaces = matchedPlaces
   }
 }
