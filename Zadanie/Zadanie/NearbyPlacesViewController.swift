@@ -9,28 +9,27 @@
 import UIKit
 
 class NearbyPlacesViewController: UITableViewController {
-  var passedPlaces = [Place]()
-  var distances = [Double]()
+  var nearbyPlaces: [Place] = []
   
   var reuseIdentifier = "placesTableCell"
   
   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return passedPlaces.count
+    return nearbyPlaces.count
   }
   
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as! PlaceView
     
-    cell.pinImageView.image = passedPlaces[indexPath.row].pinImage
-    cell.label.text = passedPlaces[indexPath.row].name
+    cell.pinImageView.image = nearbyPlaces[indexPath.row].pinImage
+    cell.label.text = nearbyPlaces[indexPath.row].name
     
     return cell
   }
   
   override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    let latitude = passedPlaces[indexPath.row].latitude
-    let longitude = passedPlaces[indexPath.row].longitude
-    let distance = distances[indexPath.row]
+    let latitude = nearbyPlaces[indexPath.row].latitude
+    let longitude = nearbyPlaces[indexPath.row].longitude
+    let distance = nearbyPlaces[indexPath.row].distance!
     
     let alert = UIAlertController(title: "Współrzędne", message: "Szerokość: \(latitude)\nDługość: \(longitude)\nOdległość: \(String(format:"%.2f", distance)) km", preferredStyle: UIAlertControllerStyle.alert)
     alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))

@@ -13,4 +13,5 @@ struct Place {
   var pinImage: UIImage?
   var latitude: Double
   var longitude: Double
+  var distance: Double?
 }

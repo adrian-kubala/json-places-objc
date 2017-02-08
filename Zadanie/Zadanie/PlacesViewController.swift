@@ -16,10 +16,8 @@ class PlacesViewController: UITableViewController {
   let reuseIdentifier = "cell"
   let segueIdentifier = "placesSegue"
   
-  var places = [Place]()
-  var placesToPass = [Place]()
-  
-  var distancesToPass = [Double]()
+  var places: [Place] = []
+  var matchedPlaces: [Place] = []
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -53,7 +51,7 @@ class PlacesViewController: UITableViewController {
         image?.resizeImage(newWidth: 30) { (scaledImage) in
           pinImage = scaledImage
           
-          let place = Place(name: name, pinImage: pinImage, latitude: lat, longitude: lon)
+          let place = Place(name: name, pinImage: pinImage, latitude: lat, longitude: lon, distance: nil)
           self.places.append(place)
           
           self.tableView.reloadData()
@@ -78,8 +76,7 @@ class PlacesViewController: UITableViewController {
   override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     let selectedCell = indexPath.row
     
-    placesToPass = []
-    distancesToPass = []
+    matchedPlaces = []
     
     let latitude = places[selectedCell].latitude
     let longitude = places[selectedCell].longitude
@@ -106,8 +103,9 @@ class PlacesViewController: UITableViewController {
         continue
       }
       
-      placesToPass.append(places[i])
-      distancesToPass.append(distance)
+      var place = places[i]
+      place.distance = distance
+      matchedPlaces.append(place)
     }
   }
   
@@ -120,7 +118,6 @@ class PlacesViewController: UITableViewController {
       return
     }
     
-    destinationViewController.passedPlaces = placesToPass
-    destinationViewController.distances = distancesToPass
+    destinationViewController.nearbyPlaces = matchedPlaces
   }
 }
