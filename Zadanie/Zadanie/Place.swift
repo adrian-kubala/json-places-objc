@@ -7,11 +7,18 @@
 //
 
 import UIKit
+import CoreLocation
 
 struct Place {
   var name: String
+  var coordinates: CLLocation
   var pinImage: UIImage?
-  var latitude: Double
-  var longitude: Double
   var distance: Double?
+  
+  init(name: String, latitude: Double, longitude: Double, pinImage: UIImage? = nil, distance: Double? = nil) {
+    self.name = name
+    coordinates = CLLocation(latitude: latitude, longitude: longitude)
+    self.pinImage = pinImage
+    self.distance = distance
+  }
 }

@@ -8,12 +8,9 @@
 
 import CoreLocation
 
-extension CLLocationCoordinate2D {
-  func distanceInKMTo(_ location: CLLocationCoordinate2D) -> Double {
-    let firstLocation = CLLocation(latitude: latitude, longitude: longitude)
-    let secondLocation = CLLocation(latitude: location.latitude, longitude: location.longitude)
-    
-    let distance = secondLocation.distance(from: firstLocation) / 1000
+extension CLLocation {
+  func distanceInKMTo(_ location: CLLocation) -> Double {
+    let distance = location.distance(from: self) / 1000
     return Double(distance)
   }
 }

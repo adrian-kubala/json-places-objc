@@ -27,8 +27,10 @@ class NearbyPlacesViewController: UITableViewController {
   }
   
   override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    let latitude = nearbyPlaces[indexPath.row].latitude
-    let longitude = nearbyPlaces[indexPath.row].longitude
+    
+    let location = nearbyPlaces[indexPath.row].coordinates
+    let latitude = location.coordinate.latitude
+    let longitude = location.coordinate.longitude
     let distance = nearbyPlaces[indexPath.row].distance!
     
     let alert = UIAlertController(title: "Współrzędne", message: "Szerokość: \(latitude)\nDługość: \(longitude)\nOdległość: \(String(format:"%.2f", distance)) km", preferredStyle: UIAlertControllerStyle.alert)
