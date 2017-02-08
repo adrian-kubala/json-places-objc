@@ -61,21 +61,14 @@ class PlacesViewController: UITableViewController {
   }
   
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let cellRow = indexPath.row
-    
-    let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath)
-    
-    fillCell(cellRow, passedCell: cell)
+    let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as! PlaceView
+    fillCell(cell, atRow: indexPath.row)
     
     return cell
   }
   
-  func fillCell(_ row: Int, passedCell: UITableViewCell) {
-    guard let myCell = passedCell as? PlaceView else {
-      return
-    }
-    
-    myCell.label.text = places[row].name
+  func fillCell(_ cell: PlaceView, atRow row: Int) {
+    cell.label.text = places[row].name
     
     let pinURL = URL(string: places[row].pinURL)
     
@@ -84,13 +77,13 @@ class PlacesViewController: UITableViewController {
         
         image?.resizeImage(newWidth: 30) { (scaledImage) in
           self.cachedImages[row] = scaledImage
-          myCell.pinImageView.image = self.cachedImages[row]!
+          cell.pinImageView.image = self.cachedImages[row]!
         }
       }
       return
     }
     
-    myCell.pinImageView.image = cachedImage
+    cell.pinImageView.image = cachedImage
   }
   
 
