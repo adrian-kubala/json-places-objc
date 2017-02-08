@@ -22,25 +22,22 @@ class PlacesViewController: UITableViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    let jsonURL = "https://dl.dropboxusercontent.com/u/18389601/development/test/Location/locations.json"
-    fetchJSON(fromURL: jsonURL)
-  }
-  
-  func fetchJSON(fromURL url: String) {
-    Alamofire.request(url).validate().responseJSON { response in
-      switch response.result {
-      case .success(let value):
-        self.fillPlacesWithJson(JSON(value))
-        self.tableView.reloadData()
-      case .failure(let error):
-        print(error)
+    let jsonURL = URL(string: "https://dl.dropboxusercontent.com/u/18389601/development/test/Location/locations.json")
+    let parser = JSONParser(withURL: jsonURL!)
+    parser.fetch { [weak self] (json, error) in
+      if let error = error {
+        print(error.localizedDescription)
+        return
+      }
+      
+      if let json = json {
+        self?.fillPlacesWithJson(json)
       }
     }
   }
   
-  func fillPlacesWithJson(_ json: JSON?) {
-    
-    for object in (json?.array)! {
+  func fillPlacesWithJson(_ json: JSON) {
+    for object in json.arrayValue {
       let name = object["name"].stringValue
       let imageUrl = URL(string: object["pin_url"].stringValue)
       let lat = object["coordinate"]["latitude"].doubleValue
