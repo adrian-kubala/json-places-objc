@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1217" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="jQA-Dy-mYe">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1217" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Z8E-Rj-Pz1">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -17,6 +17,10 @@
                         <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <view key="tableFooterView" contentMode="scaleToFill" id="obu-qS-jq6" userLabel="Blank View">
+                            <rect key="frame" x="0.0" y="80" width="375" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PlaceView" id="Lhq-QA-Eak" customClass="PlaceView" customModule="Zadanie" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="30" width="375" height="50"/>
@@ -75,7 +79,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="V15-yh-hSm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3431.1999999999998" y="611.24437781109452"/>
+            <point key="canvasLocation" x="4370.3999999999996" y="611.24437781109452"/>
         </scene>
         <!--Nearby Places View Controller-->
         <scene sceneID="PTf-gQ-zOv">
@@ -85,6 +89,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <view key="tableFooterView" contentMode="scaleToFill" id="cHo-oR-0LH" userLabel="Blank View">
+                            <rect key="frame" x="0.0" y="80" width="375" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="NearbyPlaceView" id="UFJ-zL-leU" customClass="PlaceView" customModule="Zadanie" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="30" width="375" height="50"/>
@@ -147,7 +155,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="krq-YJ-yP7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4210.3999999999996" y="611.24437781109452"/>
+            <point key="canvasLocation" x="5149.6000000000004" y="611.24437781109452"/>
         </scene>
         <!--Place View Controller-->
         <scene sceneID="QyW-Iy-M4t">
@@ -165,25 +173,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4b0-qP-JyQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4969" y="611"/>
+            <point key="canvasLocation" x="5908" y="610.34482758620697"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="Eaz-Kl-3DW">
+        <scene sceneID="0Yl-aZ-wDq">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="jQA-Dy-mYe" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Z8E-Rj-Pz1" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="H9h-7P-YW6">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Jso-2i-FE2">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="OUs-ub-k41" kind="relationship" relationship="rootViewController" id="c1W-Pq-kH4"/>
+                        <segue destination="OUs-ub-k41" kind="relationship" relationship="rootViewController" id="DzD-9S-3Iz"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="6u6-ot-m9Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YiP-7f-sPZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2492" y="611.24437781109452"/>
+            <point key="canvasLocation" x="3431.1999999999998" y="611.24437781109452"/>
         </scene>
     </scenes>
 </document>

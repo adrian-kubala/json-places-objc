@@ -48,9 +48,7 @@ class PlacesViewController: UITableViewController {
           let place = Place(name: name, latitude: lat, longitude: lon, pinImage: pinImage)
           self.places.append(place)
           
-          if json.arrayValue.last == object {
-            self.tableView.reloadData()
-          }
+          self.tableView.reloadData()
         }
       }
     }
