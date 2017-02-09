@@ -36,19 +36,21 @@ class PlacesViewController: UITableViewController {
   func fillPlacesWithJSON(_ json: JSON) {
     for object in json.arrayValue {
       let name = object["name"].stringValue
-      let imageUrl = URL(string: object["pin_url"].stringValue)
+      let imageURL = URL(string: object["pin_url"].stringValue)
       let lat = object["coordinate"]["latitude"].doubleValue
       let lon = object["coordinate"]["longitude"].doubleValue
       
       var pinImage: UIImage?
-      imageUrl?.getImage { (image) in
+      imageURL?.getImage { (image) in
         image?.resizeImage(newWidth: 30) { (scaledImage) in
           pinImage = scaledImage
           
           let place = Place(name: name, latitude: lat, longitude: lon, pinImage: pinImage)
           self.places.append(place)
           
-          self.tableView.reloadData()
+          if json.arrayValue.last == object {
+            self.tableView.reloadData()
+          }
         }
       }
     }
