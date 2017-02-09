@@ -13,6 +13,8 @@
 		3A14C0361D59D179006C908E /* PlacesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A14C0351D59D179006C908E /* PlacesViewController.swift */; };
 		3A14C0381D59DD73006C908E /* PlaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A14C0371D59DD73006C908E /* PlaceView.swift */; };
 		3A330DDE1E4B903700B1F8FE /* JSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A330DDD1E4B903700B1F8FE /* JSONParser.swift */; };
+		3A5331D91E4BD5ED0037775F /* PlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5331D81E4BD5ED0037775F /* PlaceViewController.swift */; };
+		3A5331DB1E4BE50E0037775F /* UITableViewController+gesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5331DA1E4BE50E0037775F /* UITableViewController+gesture.swift */; };
 		3A5CF9821E4B52BB004D6D27 /* UIImage+resize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5CF9811E4B52BB004D6D27 /* UIImage+resize.swift */; };
 		3A5CF9851E4B5495004D6D27 /* URL+getImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5CF9841E4B5495004D6D27 /* URL+getImage.swift */; };
 		3A5CF9891E4B5BFB004D6D27 /* CLLocation+distance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5CF9881E4B5BFB004D6D27 /* CLLocation+distance.swift */; };
@@ -29,6 +31,8 @@
 		3A14C0351D59D179006C908E /* PlacesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlacesViewController.swift; sourceTree = "<group>"; };
 		3A14C0371D59DD73006C908E /* PlaceView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceView.swift; sourceTree = "<group>"; };
 		3A330DDD1E4B903700B1F8FE /* JSONParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONParser.swift; sourceTree = "<group>"; };
+		3A5331D81E4BD5ED0037775F /* PlaceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceViewController.swift; sourceTree = "<group>"; };
+		3A5331DA1E4BE50E0037775F /* UITableViewController+gesture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableViewController+gesture.swift"; sourceTree = "<group>"; };
 		3A5CF9811E4B52BB004D6D27 /* UIImage+resize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+resize.swift"; sourceTree = "<group>"; };
 		3A5CF9841E4B5495004D6D27 /* URL+getImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "URL+getImage.swift"; sourceTree = "<group>"; };
 		3A5CF9881E4B5BFB004D6D27 /* CLLocation+distance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CLLocation+distance.swift"; sourceTree = "<group>"; };
@@ -58,6 +62,7 @@
 			isa = PBXGroup;
 			children = (
 				3A5CF9811E4B52BB004D6D27 /* UIImage+resize.swift */,
+				3A5331DA1E4BE50E0037775F /* UITableViewController+gesture.swift */,
 				3A5CF9841E4B5495004D6D27 /* URL+getImage.swift */,
 				3A5CF9881E4B5BFB004D6D27 /* CLLocation+distance.swift */,
 			);
@@ -69,6 +74,7 @@
 			children = (
 				3A14C0351D59D179006C908E /* PlacesViewController.swift */,
 				3AFF78F31D5C8BB000B1509B /* NearbyPlacesViewController.swift */,
+				3A5331D81E4BD5ED0037775F /* PlaceViewController.swift */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -267,11 +273,13 @@
 				3A5CF9851E4B5495004D6D27 /* URL+getImage.swift in Sources */,
 				3A14C0361D59D179006C908E /* PlacesViewController.swift in Sources */,
 				3A330DDE1E4B903700B1F8FE /* JSONParser.swift in Sources */,
+				3A5331DB1E4BE50E0037775F /* UITableViewController+gesture.swift in Sources */,
 				3AEDE4EF1D51D5BE00A3661B /* AppDelegate.swift in Sources */,
 				3A0F432C1D5DA6B400210784 /* Place.swift in Sources */,
 				3A5CF9891E4B5BFB004D6D27 /* CLLocation+distance.swift in Sources */,
 				3AFF78F41D5C8BB000B1509B /* NearbyPlacesViewController.swift in Sources */,
 				3A14C0381D59DD73006C908E /* PlaceView.swift in Sources */,
+				3A5331D91E4BD5ED0037775F /* PlaceViewController.swift in Sources */,
 				3A5CF9821E4B52BB004D6D27 /* UIImage+resize.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

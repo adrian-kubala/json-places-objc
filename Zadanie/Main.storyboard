@@ -22,7 +22,7 @@
                                 <rect key="frame" x="0.0" y="30" width="375" height="50"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Lhq-QA-Eak" id="lJh-50-6mr">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="49.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pwH-ZH-cyc" userLabel="Label">
@@ -90,7 +90,7 @@
                                 <rect key="frame" x="0.0" y="30" width="375" height="50"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="UFJ-zL-leU" id="O1C-bm-k6X">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="49.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="88I-FL-x3H" userLabel="Label">
@@ -135,6 +135,7 @@
                                 <connections>
                                     <outlet property="label" destination="88I-FL-x3H" id="Mjr-1m-ika"/>
                                     <outlet property="pinImageView" destination="izl-ze-Ibf" id="K0Z-GG-kTt"/>
+                                    <segue destination="eQ9-uV-HHX" kind="show" identifier="ShowPlaceViewController" id="vlh-wb-mDf"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -148,12 +149,30 @@
             </objects>
             <point key="canvasLocation" x="4210.3999999999996" y="611.24437781109452"/>
         </scene>
+        <!--Place View Controller-->
+        <scene sceneID="QyW-Iy-M4t">
+            <objects>
+                <viewController id="eQ9-uV-HHX" customClass="PlaceViewController" customModule="Zadanie" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="pQo-8J-evh"/>
+                        <viewControllerLayoutGuide type="bottom" id="wN4-0E-1D5"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Mkn-Mx-HOG">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4b0-qP-JyQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4969" y="611"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="Eaz-Kl-3DW">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="jQA-Dy-mYe" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="H9h-7P-YW6">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="H9h-7P-YW6">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
