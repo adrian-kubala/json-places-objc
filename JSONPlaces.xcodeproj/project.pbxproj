@@ -12,6 +12,7 @@
 		3A0F432C1D5DA6B400210784 /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0F432B1D5DA6B400210784 /* Place.swift */; };
 		3A14C0361D59D179006C908E /* PlacesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A14C0351D59D179006C908E /* PlacesViewController.swift */; };
 		3A14C0381D59DD73006C908E /* PlaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A14C0371D59DD73006C908E /* PlaceView.swift */; };
+		3A282BE51E4E3C70005DC912 /* Place.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A282BE41E4E3C70005DC912 /* Place.m */; };
 		3A330DDE1E4B903700B1F8FE /* JSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A330DDD1E4B903700B1F8FE /* JSONParser.swift */; };
 		3A5331D91E4BD5ED0037775F /* PlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5331D81E4BD5ED0037775F /* PlaceViewController.swift */; };
 		3A5331DB1E4BE50E0037775F /* UITableViewController+gesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5331DA1E4BE50E0037775F /* UITableViewController+gesture.swift */; };
@@ -30,6 +31,8 @@
 		3A0F432B1D5DA6B400210784 /* Place.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
 		3A14C0351D59D179006C908E /* PlacesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlacesViewController.swift; sourceTree = "<group>"; };
 		3A14C0371D59DD73006C908E /* PlaceView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceView.swift; sourceTree = "<group>"; };
+		3A282BE31E4E3C70005DC912 /* Place.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Place.h; sourceTree = "<group>"; };
+		3A282BE41E4E3C70005DC912 /* Place.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Place.m; sourceTree = "<group>"; };
 		3A330DDD1E4B903700B1F8FE /* JSONParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONParser.swift; sourceTree = "<group>"; };
 		3A5331D81E4BD5ED0037775F /* PlaceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceViewController.swift; sourceTree = "<group>"; };
 		3A5331DA1E4BE50E0037775F /* UITableViewController+gesture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableViewController+gesture.swift"; sourceTree = "<group>"; };
@@ -101,6 +104,8 @@
 			children = (
 				3A0F432B1D5DA6B400210784 /* Place.swift */,
 				3A330DDD1E4B903700B1F8FE /* JSONParser.swift */,
+				3A282BE31E4E3C70005DC912 /* Place.h */,
+				3A282BE41E4E3C70005DC912 /* Place.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -274,6 +279,7 @@
 				3A5CF9851E4B5495004D6D27 /* URL+getImage.swift in Sources */,
 				3A14C0361D59D179006C908E /* PlacesViewController.swift in Sources */,
 				3A330DDE1E4B903700B1F8FE /* JSONParser.swift in Sources */,
+				3A282BE51E4E3C70005DC912 /* Place.m in Sources */,
 				3A5331DB1E4BE50E0037775F /* UITableViewController+gesture.swift in Sources */,
 				3AEDE4EF1D51D5BE00A3661B /* AppDelegate.swift in Sources */,
 				3A0F432C1D5DA6B400210784 /* Place.swift in Sources */,
@@ -394,6 +400,7 @@
 			baseConfigurationReference = 7819EDF7C672B4330C00B1E5 /* Pods-JSONPlaces.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEVELOPMENT_TEAM = E84ETWJ5XP;
 				INFOPLIST_FILE = JSONPlaces/Info.plist;
@@ -401,6 +408,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.adrian-kubala.JSONPlaces";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -410,6 +418,7 @@
 			baseConfigurationReference = AF30E538ED69DC7573746F3B /* Pods-JSONPlaces.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEVELOPMENT_TEAM = E84ETWJ5XP;
 				INFOPLIST_FILE = JSONPlaces/Info.plist;
