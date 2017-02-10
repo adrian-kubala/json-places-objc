@@ -26,7 +26,7 @@
 
 /* Begin PBXFileReference section */
 		05C7434590BB3624EA2532A1 /* Pods-Zadanie.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Zadanie.release.xcconfig"; path = "Pods/Target Support Files/Pods-Zadanie/Pods-Zadanie.release.xcconfig"; sourceTree = "<group>"; };
-		3A031D841D5873B900FB2CBF /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = SOURCE_ROOT; };
+		3A031D841D5873B900FB2CBF /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Zadanie/Base.lproj/Main.storyboard; sourceTree = SOURCE_ROOT; };
 		3A0F432B1D5DA6B400210784 /* Place.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
 		3A14C0351D59D179006C908E /* PlacesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlacesViewController.swift; sourceTree = "<group>"; };
 		3A14C0371D59DD73006C908E /* PlaceView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceView.swift; sourceTree = "<group>"; };
