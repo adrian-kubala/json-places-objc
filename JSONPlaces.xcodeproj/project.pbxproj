@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		32D9CABD86B9936C4D1FC58D /* Pods_JSONPlaces.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 250F56D50999DFACE9ACEA46 /* Pods_JSONPlaces.framework */; };
 		3A031D871D5873B900FB2CBF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A031D841D5873B900FB2CBF /* Main.storyboard */; };
-		3A0F432C1D5DA6B400210784 /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0F432B1D5DA6B400210784 /* Place.swift */; };
 		3A14C0361D59D179006C908E /* PlacesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A14C0351D59D179006C908E /* PlacesViewController.swift */; };
 		3A14C0381D59DD73006C908E /* PlaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A14C0371D59DD73006C908E /* PlaceView.swift */; };
 		3A1DEB431E4E755C003BC8CA /* Locations.json in Resources */ = {isa = PBXBuildFile; fileRef = 3A1DEB421E4E755C003BC8CA /* Locations.json */; };
@@ -29,7 +28,6 @@
 /* Begin PBXFileReference section */
 		250F56D50999DFACE9ACEA46 /* Pods_JSONPlaces.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JSONPlaces.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A031D841D5873B900FB2CBF /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = JSONPlaces/Base.lproj/Main.storyboard; sourceTree = SOURCE_ROOT; };
-		3A0F432B1D5DA6B400210784 /* Place.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
 		3A14C0351D59D179006C908E /* PlacesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlacesViewController.swift; sourceTree = "<group>"; };
 		3A14C0371D59DD73006C908E /* PlaceView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceView.swift; sourceTree = "<group>"; };
 		3A1DEB421E4E755C003BC8CA /* Locations.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Locations.json; sourceTree = "<group>"; };
@@ -113,7 +111,6 @@
 		3AE546661DA7DAFA001C7BE3 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				3A0F432B1D5DA6B400210784 /* Place.swift */,
 				3A330DDD1E4B903700B1F8FE /* JSONParser.swift */,
 				3A282BE31E4E3C70005DC912 /* Place.h */,
 				3A282BE41E4E3C70005DC912 /* Place.m */,
@@ -296,7 +293,6 @@
 				3A282BE51E4E3C70005DC912 /* Place.m in Sources */,
 				3A5331DB1E4BE50E0037775F /* UITableViewController+gesture.swift in Sources */,
 				3AEDE4EF1D51D5BE00A3661B /* AppDelegate.swift in Sources */,
-				3A0F432C1D5DA6B400210784 /* Place.swift in Sources */,
 				3A5CF9891E4B5BFB004D6D27 /* CLLocation+distance.swift in Sources */,
 				3AFF78F41D5C8BB000B1509B /* NearbyPlacesViewController.swift in Sources */,
 				3A14C0381D59DD73006C908E /* PlaceView.swift in Sources */,

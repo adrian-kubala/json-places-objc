@@ -40,9 +40,9 @@ class NearbyPlacesViewController: UITableViewController {
       let swipeLocation = recognizer.location(in: tableView)
       if let swipedIndexPath = tableView.indexPathForRow(at: swipeLocation) {
         let location = nearbyPlaces[swipedIndexPath.row].location
-        let latitude = location.coordinate.latitude
-        let longitude = location.coordinate.longitude
-        let distance = nearbyPlaces[swipedIndexPath.row].distance!
+        let latitude = location?.coordinate.latitude
+        let longitude = location?.coordinate.longitude
+        let distance = nearbyPlaces[swipedIndexPath.row].distance
         
         let alert = UIAlertController(title: "Współrzędne",
                                       message: "Szerokość: \(latitude)\nDługość: \(longitude)\nOdległość: \(String(format:"%.2f", distance)) km",

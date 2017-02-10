@@ -46,7 +46,7 @@ class PlacesViewController: UITableViewController {
           pinImage = scaledImage
           
           let place = Place(name: name, latitude: lat, longitude: lon, pinImage: pinImage)
-          self.places.append(place)
+          self.places.append(place!)
           
           self.tableView.reloadData()
         }
@@ -71,7 +71,7 @@ class PlacesViewController: UITableViewController {
     matchedPlaces = []
     
     let location = places[indexPath.row].location
-    getAllDistancesFrom(location: location, cellRow: indexPath.row)
+    getAllDistancesFrom(location: location!, cellRow: indexPath.row)
     
     performSegue(withIdentifier: "ShowNearbyPlaces", sender: self)
   }
@@ -83,10 +83,10 @@ class PlacesViewController: UITableViewController {
       }
       
       let otherLocation = place.location
-      let distance = location.distanceInKMTo(otherLocation)
+      let distance = location.distanceInKMTo(otherLocation!)
       
       if distance <= 2 {
-        var matchedPlace = place
+        let matchedPlace = place
         matchedPlace.distance = distance
         matchedPlaces.append(matchedPlace)
       }
