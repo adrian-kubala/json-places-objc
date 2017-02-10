@@ -10,13 +10,22 @@
 
 @implementation Place
 
-- (instancetype)initWithName:(NSString *)name latitude:(double)latitude longitude:(double)longitude pinImage:(UIImage *)pinImage distance:(double)distance {
+- (instancetype)initWithName:(NSString *)name latitude:(double)latitude longitude:(double)longitude pinImage:(UIImage *)pinImage {
   self = [super init];
   
   if (self) {
     _name = name;
     _location = [[CLLocation alloc] initWithLatitude:latitude longitude:longitude];
     _pinImage = pinImage;
+  }
+  
+  return self;
+}
+
+- (instancetype)initWithName:(NSString *)name latitude:(double)latitude longitude:(double)longitude pinImage:(UIImage *)pinImage distance:(double)distance {
+  self = [self initWithName:name latitude:latitude longitude:longitude pinImage:pinImage];
+  
+  if (self) {
     _distance = distance;
   }
   

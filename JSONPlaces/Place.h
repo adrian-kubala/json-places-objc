@@ -16,6 +16,7 @@
 @property (nonatomic) UIImage *pinImage;
 @property (nonatomic) double distance;
 
+- (instancetype)initWithName:(NSString *)name latitude:(double)latitude longitude:(double)longitude pinImage:(UIImage *)pinImage;
 - (instancetype)initWithName:(NSString *)name latitude:(double)latitude longitude:(double)longitude pinImage:(UIImage *)pinImage distance:(double)distance;
 
 @end
