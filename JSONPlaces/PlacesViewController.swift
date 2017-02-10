@@ -18,7 +18,7 @@ class PlacesViewController: UITableViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    let jsonURL = URL(string: "https://dl.dropboxusercontent.com/u/18389601/development/test/Location/locations.json")
+    let jsonURL = URL(string: "http://pastebin.com/raw/dTYu3jmN")
     
     let parser = JSONParser(withURL: jsonURL!)
     parser.fetch { [weak self] (json, error) in

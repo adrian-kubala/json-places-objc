@@ -12,6 +12,7 @@
 		3A0F432C1D5DA6B400210784 /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0F432B1D5DA6B400210784 /* Place.swift */; };
 		3A14C0361D59D179006C908E /* PlacesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A14C0351D59D179006C908E /* PlacesViewController.swift */; };
 		3A14C0381D59DD73006C908E /* PlaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A14C0371D59DD73006C908E /* PlaceView.swift */; };
+		3A1DEB431E4E755C003BC8CA /* Locations.json in Resources */ = {isa = PBXBuildFile; fileRef = 3A1DEB421E4E755C003BC8CA /* Locations.json */; };
 		3A282BE51E4E3C70005DC912 /* Place.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A282BE41E4E3C70005DC912 /* Place.m */; };
 		3A330DDE1E4B903700B1F8FE /* JSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A330DDD1E4B903700B1F8FE /* JSONParser.swift */; };
 		3A5331D91E4BD5ED0037775F /* PlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5331D81E4BD5ED0037775F /* PlaceViewController.swift */; };
@@ -31,6 +32,7 @@
 		3A0F432B1D5DA6B400210784 /* Place.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
 		3A14C0351D59D179006C908E /* PlacesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlacesViewController.swift; sourceTree = "<group>"; };
 		3A14C0371D59DD73006C908E /* PlaceView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceView.swift; sourceTree = "<group>"; };
+		3A1DEB421E4E755C003BC8CA /* Locations.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Locations.json; sourceTree = "<group>"; };
 		3A282BE31E4E3C70005DC912 /* Place.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Place.h; sourceTree = "<group>"; };
 		3A282BE41E4E3C70005DC912 /* Place.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Place.m; sourceTree = "<group>"; };
 		3A330DDD1E4B903700B1F8FE /* JSONParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONParser.swift; sourceTree = "<group>"; };
@@ -131,6 +133,7 @@
 		3AEDE4ED1D51D5BE00A3661B /* JSONPlaces */ = {
 			isa = PBXGroup;
 			children = (
+				3A1DEB421E4E755C003BC8CA /* Locations.json */,
 				3AEDE4EE1D51D5BE00A3661B /* AppDelegate.swift */,
 				3A031D841D5873B900FB2CBF /* Main.storyboard */,
 				3AEDE4F51D51D5BE00A3661B /* Assets.xcassets */,
@@ -217,6 +220,7 @@
 			files = (
 				3A031D871D5873B900FB2CBF /* Main.storyboard in Resources */,
 				3AEDE4F91D51D5BE00A3661B /* LaunchScreen.storyboard in Resources */,
+				3A1DEB431E4E755C003BC8CA /* Locations.json in Resources */,
 				3AEDE4F61D51D5BE00A3661B /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
