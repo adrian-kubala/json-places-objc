@@ -1,0 +1,18 @@
+[
+  {
+    "name": "Politechnika Koszalińska",
+    "coordinate": {
+      "latitude": 54.203463,
+      "longitude": "16.203160"
+    },
+    "pin_url": "https://drive.google.com/open?id=0Bx-3SNC3SvOqSFZhazNsZE8zcG8"
+  },
+  {
+    "name": "Stadion Gwardii",
+    "coordinate": {
+      "latitude": 54.19995,
+      "longitude": "16.198365"
+    },
+    "pin_url": "https://drive.google.com/open?id=0Bx-3SNC3SvOqeGpiMTFyek15bkk"
+  }
+]
