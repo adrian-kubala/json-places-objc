@@ -37,6 +37,7 @@
 		3A330DDD1E4B903700B1F8FE /* JSONParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONParser.swift; sourceTree = "<group>"; };
 		3A5331D81E4BD5ED0037775F /* PlaceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceViewController.swift; sourceTree = "<group>"; };
 		3A5331DA1E4BE50E0037775F /* UITableViewController+gesture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableViewController+gesture.swift"; sourceTree = "<group>"; };
+		3A5496741E4FD92B009C1D32 /* UIImage+resize.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+resize.h"; sourceTree = "<group>"; };
 		3A5CF9811E4B52BB004D6D27 /* UIImage+resize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+resize.swift"; sourceTree = "<group>"; };
 		3A5CF9841E4B5495004D6D27 /* URL+getImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "URL+getImage.swift"; sourceTree = "<group>"; };
 		3A5CF9881E4B5BFB004D6D27 /* CLLocation+distance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CLLocation+distance.swift"; sourceTree = "<group>"; };
@@ -86,6 +87,7 @@
 				3A5331DA1E4BE50E0037775F /* UITableViewController+gesture.swift */,
 				3A5CF9841E4B5495004D6D27 /* URL+getImage.swift */,
 				3A5CF9881E4B5BFB004D6D27 /* CLLocation+distance.swift */,
+				3A5496741E4FD92B009C1D32 /* UIImage+resize.h */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
