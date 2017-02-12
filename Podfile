@@ -2,10 +2,6 @@
 use_frameworks!
 
 target 'JSONPlaces' do
-    pod 'Alamofire', '~> 4.3'
-    pod 'AlamofireImage', '~> 3.2'
-    pod 'SwiftyJSON', '~> 3.1'
     pod 'GoogleMaps', '~> 2.1'
     pod 'SDWebImage', '~> 4.0'
-    pod 'SBJson', '~> 5.0'
 end
