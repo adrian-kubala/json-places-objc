@@ -1,5 +1,5 @@
 //
-//  UIImage+resize.h
+//  UIImage+resizeImage.h
 //  JSONPlaces
 //
 //  Created by Adrian Kubała on 12.02.2017.
@@ -13,3 +13,4 @@
 - (void)resizeImage:(CGFloat)newWidth completion:(void (^)(UIImage *))completion;
 
 @end
+ 
