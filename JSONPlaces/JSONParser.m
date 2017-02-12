@@ -20,10 +20,12 @@
   return self;
 }
 
-- (void)parse {
+- (void)fetch:(void (^)(NSArray *, NSError *))completion {
   NSError *error;
   NSData *data = [NSData dataWithContentsOfURL: self.url];
-  NSMutableArray *json = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
+  NSArray *json = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
+  
+  completion(json, error);
 }
 
 @end

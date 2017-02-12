@@ -23,7 +23,17 @@ class PlacesViewController: UITableViewController {
     let jsonURL = URL(string: "http://pastebin.com/raw/dTYu3jmN")
     
     let jsonParser = JSONParser(url: jsonURL!)
-    jsonParser?.parse()
+    jsonParser?.fetch { [weak self] (result, error) in
+      if let error = error {
+        print(error.localizedDescription)
+        return
+      }
+      
+      if let result = result {
+        self?.fillPlacesWithJSON(result)
+      }
+      
+    }
     
 //    let parser = JSONParser(withURL: jsonURL!)
 //    parser.fetch { [weak self] (json, error) in
@@ -38,17 +48,21 @@ class PlacesViewController: UITableViewController {
 //    }
   }
   
-  func fillPlacesWithJSON(_ json: JSON) {
-    for object in json.arrayValue {
-      let name = object["name"].stringValue
-      let imageURL = NSURL(string: object["pin_url"].stringValue)
-      let lat = object["coordinate"]["latitude"].doubleValue
-      let lon = object["coordinate"]["longitude"].doubleValue
+  func fillPlacesWithJSON(_ jsonArray: [Any]) {
+    for object in jsonArray {
+      let entry = object as! [String: Any]
+      
+      let name = entry["name"] as! String
+      let imageURL = NSURL(string: entry["pin_url"] as! String)
+      
+      let coordinate = entry["coordinate"] as! [String: String]
+      let lat = Double(coordinate["latitude"]!)
+      let lon = Double(coordinate["longitude"]!)
       
       imageURL?.getImage { (image) in
         image?.resize(withNewWidth: 30) { (scaledImage) in
           
-          let place = Place(name: name, latitude: lat, longitude: lon, pinImage: scaledImage)
+          let place = Place(name: name, latitude: lat!, longitude: lon!, pinImage: scaledImage)
           self.places.append(place!)
           
           self.tableView.reloadData()
