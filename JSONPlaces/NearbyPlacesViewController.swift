@@ -12,7 +12,7 @@ class NearbyPlacesViewController: UITableViewController {
   var nearbyPlaces: [Place] = []
   
   override func viewDidLoad() {
-    addLongPressGestureRecognizer(selector: #selector(showPlaceDetails(recognizer:)))
+    addLongPressGestureRecognizer(with: #selector(showPlaceDetails(recognizer:)))
   }
   
   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

@@ -10,6 +10,6 @@
 
 @interface UITableViewController (gesture)
 
-- (void) addLongPressGestureRecognizer:(SEL)selector;
+- (void) addLongPressGestureRecognizerWithSelector:(SEL)selector;
 
 @end

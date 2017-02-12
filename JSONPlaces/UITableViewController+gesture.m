@@ -10,7 +10,7 @@
 
 @implementation UITableViewController (gesture)
 
--(void)addLongPressGestureRecognizer:(SEL)selector {
+-(void)addLongPressGestureRecognizerWithSelector:(SEL)selector {
   UILongPressGestureRecognizer *recognizer = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:selector];
   [self.tableView addGestureRecognizer:recognizer];
 }
