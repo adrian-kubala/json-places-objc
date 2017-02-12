@@ -21,8 +21,7 @@
 - (void)viewDidLoad {
   [super viewDidLoad];
   
-//  self addLongPressGestureRecognizerWithSelector:
-  
+  [self addLongPressGestureRecognizerWithSelector:@selector(showPlaceDetails:)];
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -31,7 +30,6 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
   PlaceView *cell = (PlaceView *) [self.tableView dequeueReusableCellWithIdentifier:@"NearbyPlaceView" forIndexPath:indexPath];
-  
   
   Place *place = self.nearbyPlaces[indexPath.row];
   cell.pinImageView.image = place.pinImage;
@@ -45,6 +43,27 @@
   UITableViewCell *cell = (UITableViewCell *) sender;
   long row = [self.tableView indexPathForCell:cell].row;
   placeViewController.place = self.nearbyPlaces[row];
+}
+
+- (void)showPlaceDetails:(UIGestureRecognizer *)recognizer {
+  if (recognizer.state == UIGestureRecognizerStateBegan) {
+    CGPoint pressLocation = [recognizer locationInView:self.tableView];
+    NSIndexPath *pressedIndexPath = [self.tableView indexPathForRowAtPoint:pressLocation];
+    
+    Place *place = self.nearbyPlaces[pressedIndexPath.row];
+    CLLocation *location = place.location;
+    CLLocationDegrees latitude = location.coordinate.latitude;
+    CLLocationDegrees longitude = location.coordinate.longitude;
+    double distance = place.distance;
+    
+    NSString *message = [NSString stringWithFormat:@"Szerokość: %f\nDługość: %f\nOdległość: %.2f km", latitude, longitude, distance];
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Współrzędne" message:message preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction *action = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
+    [alert addAction:action];
+    
+    [self presentViewController:alert animated:true completion:nil];
+  }
 }
 
 @end
