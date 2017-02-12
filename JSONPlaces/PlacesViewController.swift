@@ -7,10 +7,6 @@
 //
 
 import UIKit
-import SDWebImage
-import Alamofire
-import SwiftyJSON
-import CoreLocation
 
 class PlacesViewController: UITableViewController {
   var places: [Place] = []
