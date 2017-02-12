@@ -10,4 +10,6 @@
 
 @interface CLLocation (distance)
 
+- (double)distanceInKmToLocation:(CLLocation *)location;
+
 @end
