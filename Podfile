@@ -7,4 +7,5 @@ target 'JSONPlaces' do
     pod 'SwiftyJSON', '~> 3.1'
     pod 'GoogleMaps', '~> 2.1'
     pod 'SDWebImage', '~> 4.0'
+    pod 'SBJson', '~> 5.0'
 end

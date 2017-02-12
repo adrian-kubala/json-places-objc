@@ -11,3 +11,4 @@
 #import "CLLocation+distance.h"
 #import "NSURL+getImage.h"
 #import "UITableViewController+gesture.h"
+#import "JSONParser.h"

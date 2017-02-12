@@ -7,6 +7,7 @@ PODS:
   - GoogleMaps/Base (2.1.1)
   - GoogleMaps/Maps (2.1.1):
     - GoogleMaps/Base
+  - SBJson (5.0.0)
   - SDWebImage (4.0.0):
     - SDWebImage/Core (= 4.0.0)
   - SDWebImage/Core (4.0.0)
@@ -16,6 +17,7 @@ DEPENDENCIES:
   - Alamofire (~> 4.3)
   - AlamofireImage (~> 3.2)
   - GoogleMaps (~> 2.1)
+  - SBJson (~> 5.0)
   - SDWebImage (~> 4.0)
   - SwiftyJSON (~> 3.1)
 
@@ -23,9 +25,10 @@ SPEC CHECKSUMS:
   Alamofire: 856a113053a7bc9cbe5d6367a555d773fc5cfef7
   AlamofireImage: 157ed682cc81d3b9db4fb90c1f12180ac552d93b
   GoogleMaps: a5b5bbe47734e2443bde781a6aa64e69fdb6d785
+  SBJson: 73c848dc34be51fda282fab12bda6c426f5ead08
   SDWebImage: 76a6348bdc74eb5a55dd08a091ef298e56b55e41
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
-PODFILE CHECKSUM: db8ffa34952d206caad89f35d72760db207f1b77
+PODFILE CHECKSUM: 1ec4c4e5764d3090da65996f3cbace5af616f8c4
 
 COCOAPODS: 1.2.0
