@@ -1,16 +1,16 @@
 //
-//  UIImage+resizeImage.m
+//  UIImage+resize.m
 //  JSONPlaces
 //
 //  Created by Adrian Kubała on 12.02.2017.
 //  Copyright © 2017 Adrian. All rights reserved.
 //
 
-#import "UIImage+resizeImage.h"
+#import "UIImage+resize.h"
 
-@implementation UIImage (resizeImage)
+@implementation UIImage (resize)
 
-- (void)resizeImage:(CGFloat)newWidth completion:(void (^)(UIImage *))completion {
+- (void)resizeWithNewWidth:(CGFloat)newWidth completion:(void (^)(UIImage *))completion {
   dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
   dispatch_async(queue, ^{
     

@@ -1,5 +1,5 @@
 //
-//  UIImage+resizeImage.h
+//  UIImage+resize.h
 //  JSONPlaces
 //
 //  Created by Adrian Kubała on 12.02.2017.
@@ -8,9 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UIImage (resizeImage)
+@interface UIImage (resize)
 
-- (void)resizeImage:(CGFloat)newWidth completion:(void (^)(UIImage *))completion;
+- (void)resizeWithNewWidth:(CGFloat)newWidth completion:(void (^)(UIImage *))completion;
 
 @end
  
