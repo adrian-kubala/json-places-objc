@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SDWebImage
 import Alamofire
 import SwiftyJSON
 import CoreLocation
@@ -36,21 +37,20 @@ class PlacesViewController: UITableViewController {
   func fillPlacesWithJSON(_ json: JSON) {
     for object in json.arrayValue {
       let name = object["name"].stringValue
-      let imageURL = URL(string: object["pin_url"].stringValue)
+      let imageURL = NSURL(string: object["pin_url"].stringValue)
       let lat = object["coordinate"]["latitude"].doubleValue
       let lon = object["coordinate"]["longitude"].doubleValue
       
-      var pinImage: UIImage?
       imageURL?.getImage { (image) in
         image?.resize(withNewWidth: 30) { (scaledImage) in
-          pinImage = scaledImage
           
-          let place = Place(name: name, latitude: lat, longitude: lon, pinImage: pinImage)
+          let place = Place(name: name, latitude: lat, longitude: lon, pinImage: scaledImage)
           self.places.append(place!)
           
           self.tableView.reloadData()
-        }
+        }  
       }
+      
     }
   }
   

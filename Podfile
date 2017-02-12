@@ -6,4 +6,5 @@ target 'JSONPlaces' do
     pod 'AlamofireImage', '~> 3.2'
     pod 'SwiftyJSON', '~> 3.1'
     pod 'GoogleMaps', '~> 2.1'
+    pod 'SDWebImage', '~> 4.0'
 end
