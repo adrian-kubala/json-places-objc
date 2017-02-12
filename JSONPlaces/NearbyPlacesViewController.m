@@ -10,6 +10,7 @@
 #import "UITableViewController+gesture.h"
 #import "PlaceView.h"
 #import "Place.h"
+#import "PlaceViewController.h"
 
 @interface NearbyPlacesViewController ()
 
@@ -37,6 +38,13 @@
   cell.label.text = place.name;
   
   return cell;
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+  PlaceViewController *placeViewController = (PlaceViewController *) segue.destinationViewController;
+  UITableViewCell *cell = (UITableViewCell *) sender;
+  long row = [self.tableView indexPathForCell:cell].row;
+  placeViewController.place = self.nearbyPlaces[row];
 }
 
 @end
