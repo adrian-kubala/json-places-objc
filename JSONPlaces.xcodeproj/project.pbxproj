@@ -19,6 +19,7 @@
 		3A9756F61E4FE966009DED21 /* NSURL+getImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A9756F51E4FE966009DED21 /* NSURL+getImage.m */; };
 		3AA37DED1E50AE7A00CDFB7C /* PlaceView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AA37DEC1E50AE7A00CDFB7C /* PlaceView.m */; };
 		3AA84ABE1E50ABA300B1C850 /* UITableViewController+gesture.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AA84ABD1E50ABA300B1C850 /* UITableViewController+gesture.m */; };
+		3AAB75071E50B32E00C1668C /* JSONParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AAB75061E50B32E00C1668C /* JSONParser.m */; };
 		3AEDE4EF1D51D5BE00A3661B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEDE4EE1D51D5BE00A3661B /* AppDelegate.swift */; };
 		3AEDE4F61D51D5BE00A3661B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3AEDE4F51D51D5BE00A3661B /* Assets.xcassets */; };
 		3AEDE4F91D51D5BE00A3661B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AEDE4F71D51D5BE00A3661B /* LaunchScreen.storyboard */; };
@@ -45,6 +46,8 @@
 		3AA37DEC1E50AE7A00CDFB7C /* PlaceView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaceView.m; sourceTree = "<group>"; };
 		3AA84ABC1E50ABA300B1C850 /* UITableViewController+gesture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableViewController+gesture.h"; sourceTree = "<group>"; };
 		3AA84ABD1E50ABA300B1C850 /* UITableViewController+gesture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableViewController+gesture.m"; sourceTree = "<group>"; };
+		3AAB75051E50B32E00C1668C /* JSONParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONParser.h; sourceTree = "<group>"; };
+		3AAB75061E50B32E00C1668C /* JSONParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONParser.m; sourceTree = "<group>"; };
 		3AEDE4EB1D51D5BE00A3661B /* JSONPlaces.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JSONPlaces.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3AEDE4EE1D51D5BE00A3661B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3AEDE4F51D51D5BE00A3661B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -124,6 +127,8 @@
 				3A330DDD1E4B903700B1F8FE /* JSONParser.swift */,
 				3A282BE31E4E3C70005DC912 /* Place.h */,
 				3A282BE41E4E3C70005DC912 /* Place.m */,
+				3AAB75051E50B32E00C1668C /* JSONParser.h */,
+				3AAB75061E50B32E00C1668C /* JSONParser.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -299,6 +304,7 @@
 			files = (
 				3A9756F61E4FE966009DED21 /* NSURL+getImage.m in Sources */,
 				3A14C0361D59D179006C908E /* PlacesViewController.swift in Sources */,
+				3AAB75071E50B32E00C1668C /* JSONParser.m in Sources */,
 				3A330DDE1E4B903700B1F8FE /* JSONParser.swift in Sources */,
 				3A54967A1E4FDBBA009C1D32 /* UIImage+resize.m in Sources */,
 				3A282BE51E4E3C70005DC912 /* Place.m in Sources */,
