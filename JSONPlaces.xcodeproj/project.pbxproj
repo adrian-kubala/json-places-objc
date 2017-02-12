@@ -19,6 +19,7 @@
 		3A54967A1E4FDBBA009C1D32 /* UIImage+resize.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A5496791E4FDBBA009C1D32 /* UIImage+resize.m */; };
 		3A5496811E4FE460009C1D32 /* CLLocation+distance.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A5496801E4FE460009C1D32 /* CLLocation+distance.m */; };
 		3A9756F61E4FE966009DED21 /* NSURL+getImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A9756F51E4FE966009DED21 /* NSURL+getImage.m */; };
+		3AA84ABE1E50ABA300B1C850 /* UITableViewController+gesture.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AA84ABD1E50ABA300B1C850 /* UITableViewController+gesture.m */; };
 		3AEDE4EF1D51D5BE00A3661B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEDE4EE1D51D5BE00A3661B /* AppDelegate.swift */; };
 		3AEDE4F61D51D5BE00A3661B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3AEDE4F51D51D5BE00A3661B /* Assets.xcassets */; };
 		3AEDE4F91D51D5BE00A3661B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AEDE4F71D51D5BE00A3661B /* LaunchScreen.storyboard */; };
@@ -43,6 +44,8 @@
 		3A5496801E4FE460009C1D32 /* CLLocation+distance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CLLocation+distance.m"; sourceTree = "<group>"; };
 		3A9756F41E4FE966009DED21 /* NSURL+getImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURL+getImage.h"; sourceTree = "<group>"; };
 		3A9756F51E4FE966009DED21 /* NSURL+getImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURL+getImage.m"; sourceTree = "<group>"; };
+		3AA84ABC1E50ABA300B1C850 /* UITableViewController+gesture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableViewController+gesture.h"; sourceTree = "<group>"; };
+		3AA84ABD1E50ABA300B1C850 /* UITableViewController+gesture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableViewController+gesture.m"; sourceTree = "<group>"; };
 		3AEDE4EB1D51D5BE00A3661B /* JSONPlaces.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JSONPlaces.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3AEDE4EE1D51D5BE00A3661B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3AEDE4F51D51D5BE00A3661B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -92,6 +95,8 @@
 				3A5496801E4FE460009C1D32 /* CLLocation+distance.m */,
 				3A9756F41E4FE966009DED21 /* NSURL+getImage.h */,
 				3A9756F51E4FE966009DED21 /* NSURL+getImage.m */,
+				3AA84ABC1E50ABA300B1C850 /* UITableViewController+gesture.h */,
+				3AA84ABD1E50ABA300B1C850 /* UITableViewController+gesture.m */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -298,6 +303,7 @@
 				3A330DDE1E4B903700B1F8FE /* JSONParser.swift in Sources */,
 				3A54967A1E4FDBBA009C1D32 /* UIImage+resize.m in Sources */,
 				3A282BE51E4E3C70005DC912 /* Place.m in Sources */,
+				3AA84ABE1E50ABA300B1C850 /* UITableViewController+gesture.m in Sources */,
 				3A5331DB1E4BE50E0037775F /* UITableViewController+gesture.swift in Sources */,
 				3A5496811E4FE460009C1D32 /* CLLocation+distance.m in Sources */,
 				3AEDE4EF1D51D5BE00A3661B /* AppDelegate.swift in Sources */,
