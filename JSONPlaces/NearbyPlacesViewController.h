@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface NearbyPlacesViewController : UIViewController
+@interface NearbyPlacesViewController : UITableViewController
+
+@property (nonatomic) NSMutableArray *nearbyPlaces;
 
 @end
