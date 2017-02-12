@@ -7,6 +7,7 @@
 //
 #import "Place.h"
 #import "PlaceView.h"
+#import "PlaceViewController.h"
 #import "UIImage+resize.h"
 #import "CLLocation+distance.h"
 #import "NSURL+getImage.h"

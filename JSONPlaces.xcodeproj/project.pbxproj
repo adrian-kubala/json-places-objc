@@ -10,9 +10,9 @@
 		32D9CABD86B9936C4D1FC58D /* Pods_JSONPlaces.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 250F56D50999DFACE9ACEA46 /* Pods_JSONPlaces.framework */; };
 		3A031D871D5873B900FB2CBF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A031D841D5873B900FB2CBF /* Main.storyboard */; };
 		3A14C0361D59D179006C908E /* PlacesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A14C0351D59D179006C908E /* PlacesViewController.swift */; };
+		3A1D71ED1E50EF80008E20D6 /* PlaceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A1D71EC1E50EF80008E20D6 /* PlaceViewController.m */; };
 		3A1DEB431E4E755C003BC8CA /* Locations.json in Resources */ = {isa = PBXBuildFile; fileRef = 3A1DEB421E4E755C003BC8CA /* Locations.json */; };
 		3A282BE51E4E3C70005DC912 /* Place.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A282BE41E4E3C70005DC912 /* Place.m */; };
-		3A5331D91E4BD5ED0037775F /* PlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5331D81E4BD5ED0037775F /* PlaceViewController.swift */; };
 		3A54967A1E4FDBBA009C1D32 /* UIImage+resize.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A5496791E4FDBBA009C1D32 /* UIImage+resize.m */; };
 		3A5496811E4FE460009C1D32 /* CLLocation+distance.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A5496801E4FE460009C1D32 /* CLLocation+distance.m */; };
 		3A9756F61E4FE966009DED21 /* NSURL+getImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A9756F51E4FE966009DED21 /* NSURL+getImage.m */; };
@@ -29,11 +29,12 @@
 		250F56D50999DFACE9ACEA46 /* Pods_JSONPlaces.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JSONPlaces.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A031D841D5873B900FB2CBF /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = JSONPlaces/Base.lproj/Main.storyboard; sourceTree = SOURCE_ROOT; };
 		3A14C0351D59D179006C908E /* PlacesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlacesViewController.swift; sourceTree = "<group>"; };
+		3A1D71EB1E50EF80008E20D6 /* PlaceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaceViewController.h; sourceTree = "<group>"; };
+		3A1D71EC1E50EF80008E20D6 /* PlaceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaceViewController.m; sourceTree = "<group>"; };
 		3A1DEB421E4E755C003BC8CA /* Locations.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Locations.json; sourceTree = "<group>"; };
 		3A1DEB441E4E862C003BC8CA /* JSONPlaces-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "JSONPlaces-Bridging-Header.h"; sourceTree = "<group>"; };
 		3A282BE31E4E3C70005DC912 /* Place.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Place.h; sourceTree = "<group>"; };
 		3A282BE41E4E3C70005DC912 /* Place.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Place.m; sourceTree = "<group>"; };
-		3A5331D81E4BD5ED0037775F /* PlaceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceViewController.swift; sourceTree = "<group>"; };
 		3A5496781E4FDBBA009C1D32 /* UIImage+resize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+resize.h"; sourceTree = "<group>"; };
 		3A5496791E4FDBBA009C1D32 /* UIImage+resize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+resize.m"; sourceTree = "<group>"; };
 		3A54967F1E4FE460009C1D32 /* CLLocation+distance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CLLocation+distance.h"; sourceTree = "<group>"; };
@@ -105,7 +106,8 @@
 			children = (
 				3A14C0351D59D179006C908E /* PlacesViewController.swift */,
 				3AFF78F31D5C8BB000B1509B /* NearbyPlacesViewController.swift */,
-				3A5331D81E4BD5ED0037775F /* PlaceViewController.swift */,
+				3A1D71EB1E50EF80008E20D6 /* PlaceViewController.h */,
+				3A1D71EC1E50EF80008E20D6 /* PlaceViewController.m */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -299,6 +301,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A1D71ED1E50EF80008E20D6 /* PlaceViewController.m in Sources */,
 				3A9756F61E4FE966009DED21 /* NSURL+getImage.m in Sources */,
 				3A14C0361D59D179006C908E /* PlacesViewController.swift in Sources */,
 				3AAB75071E50B32E00C1668C /* JSONParser.m in Sources */,
@@ -309,7 +312,6 @@
 				3A5496811E4FE460009C1D32 /* CLLocation+distance.m in Sources */,
 				3AEDE4EF1D51D5BE00A3661B /* AppDelegate.swift in Sources */,
 				3AFF78F41D5C8BB000B1509B /* NearbyPlacesViewController.swift in Sources */,
-				3A5331D91E4BD5ED0037775F /* PlaceViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
