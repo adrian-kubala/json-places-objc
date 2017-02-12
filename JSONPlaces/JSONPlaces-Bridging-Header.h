@@ -6,3 +6,4 @@
 //  Copyright © 2017 Adrian. All rights reserved.
 //
 #import "Place.h"
+#import "UIImage+resize.h"

@@ -42,7 +42,7 @@ class PlacesViewController: UITableViewController {
       
       var pinImage: UIImage?
       imageURL?.getImage { (image) in
-        image?.resizeImage(newWidth: 30) { (scaledImage) in
+        image?.resize(withNewWidth: 30) { (scaledImage) in
           pinImage = scaledImage
           
           let place = Place(name: name, latitude: lat, longitude: lon, pinImage: pinImage)
