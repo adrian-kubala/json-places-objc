@@ -14,24 +14,23 @@
 
 @implementation PlaceViewController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view.
+- (void)loadView {
+  CLLocationDegrees latitude = self.place.location.coordinate.latitude;
+  CLLocationDegrees longitude = self.place.location.coordinate.longitude;
+  
+  GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:latitude longitude:longitude zoom:16];
+  GMSMapView *mapView = [GMSMapView mapWithFrame:CGRectZero camera:camera];
+  [mapView setMyLocationEnabled:true];
+  self.view = mapView;
+  
+  GMSMarker *marker = [[GMSMarker alloc] init];
+  marker.position = CLLocationCoordinate2DMake(latitude, longitude);
+  
+  marker.title = self.place.name;
+  marker.icon = self.place.pinImage;
+  marker.map = mapView;
+  mapView.selectedMarker = marker;
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
