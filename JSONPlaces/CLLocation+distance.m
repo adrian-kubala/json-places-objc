@@ -10,7 +10,7 @@
 
 @implementation CLLocation (distance)
 
-- (double)distanceInKmToLocation:(CLLocation *)location {
+- (double)distanceInKmTo:(CLLocation *)location {
   double distance = [location distanceFromLocation:self] / 1000;
   return distance;
 }

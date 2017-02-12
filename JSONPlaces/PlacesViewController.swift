@@ -83,7 +83,7 @@ class PlacesViewController: UITableViewController {
       }
       
       let otherLocation = place.location
-      let distance = location.distanceInKMTo(otherLocation!)
+      let distance = location.distanceInKm(to: otherLocation)
       
       if distance <= 2 {
         let matchedPlace = place
