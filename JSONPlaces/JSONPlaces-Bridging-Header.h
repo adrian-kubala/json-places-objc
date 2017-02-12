@@ -8,3 +8,4 @@
 #import "Place.h"
 #import "UIImage+resize.h"
 #import "CLLocation+distance.h"
+#import "NSURL+getImage.h"

@@ -37,19 +37,20 @@ class PlacesViewController: UITableViewController {
   func fillPlacesWithJSON(_ json: JSON) {
     for object in json.arrayValue {
       let name = object["name"].stringValue
-      let imageURL = URL(string: object["pin_url"].stringValue)
+      let imageURL = NSURL(string: object["pin_url"].stringValue)
       let lat = object["coordinate"]["latitude"].doubleValue
       let lon = object["coordinate"]["longitude"].doubleValue
       
-      SDWebImageDownloader.shared().downloadImage(with: imageURL, options: SDWebImageDownloaderOptions.highPriority, progress: nil, completed: { (image, data, error, bool) in
+      imageURL?.getImage { (image) in
         image?.resize(withNewWidth: 30) { (scaledImage) in
           
           let place = Place(name: name, latitude: lat, longitude: lon, pinImage: scaledImage)
           self.places.append(place!)
           
           self.tableView.reloadData()
-        }
-      })
+        }  
+      }
+      
     }
   }
   

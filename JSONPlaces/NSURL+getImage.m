@@ -7,14 +7,14 @@
 //
 
 #import "NSURL+getImage.h"
+#import "SDWebImage/SDWebImageDownloader.h"
 
 @implementation NSURL (getImage)
 
 - (void) getImage:(void (^)(UIImage *))completion {
-//  UIImageView *imageView = [[UIImageView alloc] init];
-//  [imageView setImageWithURL:self];
-//  
-//  completion(imageView.image);
+  [[SDWebImageDownloader sharedDownloader] downloadImageWithURL:self options:SDWebImageDownloaderHighPriority progress:nil completed:^(UIImage * _Nullable image, NSData * _Nullable data, NSError * _Nullable error, BOOL finished) {
+    completion(image);
+  }];
 }
 
 @end
