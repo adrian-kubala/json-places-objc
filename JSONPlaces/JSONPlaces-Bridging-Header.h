@@ -6,6 +6,7 @@
 //  Copyright © 2017 Adrian. All rights reserved.
 //
 #import "Place.h"
+#import "PlaceView.h"
 #import "UIImage+resize.h"
 #import "CLLocation+distance.h"
 #import "NSURL+getImage.h"

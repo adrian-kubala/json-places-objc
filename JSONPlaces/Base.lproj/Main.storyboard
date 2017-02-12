@@ -12,7 +12,7 @@
         <!--Lokalizacje-->
         <scene sceneID="cOP-1p-FMM">
             <objects>
-                <tableViewController automaticallyAdjustsScrollViewInsets="NO" id="OUs-ub-k41" customClass="PlacesViewController" customModule="Zadanie" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController automaticallyAdjustsScrollViewInsets="NO" id="OUs-ub-k41" customClass="PlacesViewController" customModule="JSONPlaces" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="50" sectionHeaderHeight="30" sectionFooterHeight="30" id="gpR-Fh-N7g">
                         <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -22,11 +22,11 @@
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PlaceView" id="Lhq-QA-Eak" customClass="PlaceView" customModule="Zadanie" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PlaceView" id="Lhq-QA-Eak" customClass="PlaceView">
                                 <rect key="frame" x="0.0" y="30" width="375" height="50"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Lhq-QA-Eak" id="lJh-50-6mr">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="49.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pwH-ZH-cyc" userLabel="Label">
@@ -61,8 +61,8 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="label" destination="pwH-ZH-cyc" id="Ipw-9I-4hK"/>
-                                    <outlet property="pinImageView" destination="XUY-lo-f62" id="lsN-fC-BS1"/>
+                                    <outlet property="label" destination="pwH-ZH-cyc" id="kkB-wl-2Tf"/>
+                                    <outlet property="pinImageView" destination="XUY-lo-f62" id="nU5-Qe-Lam"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -84,7 +84,7 @@
         <!--Nearby Places View Controller-->
         <scene sceneID="PTf-gQ-zOv">
             <objects>
-                <tableViewController id="hJa-fx-boV" customClass="NearbyPlacesViewController" customModule="Zadanie" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="hJa-fx-boV" customClass="NearbyPlacesViewController" customModule="JSONPlaces" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="50" sectionHeaderHeight="30" sectionFooterHeight="30" id="KMT-1B-5rL">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -94,11 +94,11 @@
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="NearbyPlaceView" id="UFJ-zL-leU" customClass="PlaceView" customModule="Zadanie" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="NearbyPlaceView" id="UFJ-zL-leU" customClass="PlaceView">
                                 <rect key="frame" x="0.0" y="30" width="375" height="50"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="UFJ-zL-leU" id="O1C-bm-k6X">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="49.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="88I-FL-x3H" userLabel="Label">
@@ -141,9 +141,9 @@
                                     </variation>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="label" destination="88I-FL-x3H" id="Mjr-1m-ika"/>
-                                    <outlet property="pinImageView" destination="izl-ze-Ibf" id="K0Z-GG-kTt"/>
-                                    <segue destination="eQ9-uV-HHX" kind="show" identifier="ShowPlaceViewController" id="vlh-wb-mDf"/>
+                                    <outlet property="label" destination="88I-FL-x3H" id="8PD-fX-I5p"/>
+                                    <outlet property="pinImageView" destination="izl-ze-Ibf" id="4pB-sd-ZfY"/>
+                                    <segue destination="eQ9-uV-HHX" kind="show" id="4I5-qU-WJp"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -160,7 +160,7 @@
         <!--Place View Controller-->
         <scene sceneID="QyW-Iy-M4t">
             <objects>
-                <viewController id="eQ9-uV-HHX" customClass="PlaceViewController" customModule="Zadanie" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="eQ9-uV-HHX" customClass="PlaceViewController" customModule="JSONPlaces" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="pQo-8J-evh"/>
                         <viewControllerLayoutGuide type="bottom" id="wN4-0E-1D5"/>
@@ -180,7 +180,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Z8E-Rj-Pz1" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Jso-2i-FE2">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Jso-2i-FE2">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
