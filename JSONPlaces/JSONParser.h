@@ -13,5 +13,6 @@
 @property (nonatomic) NSURL *url;
 
 - (instancetype)initWithURL:(NSURL *)url;
+- (void)parse;
 
 @end

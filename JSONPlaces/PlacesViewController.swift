@@ -11,6 +11,7 @@ import SDWebImage
 import Alamofire
 import SwiftyJSON
 import CoreLocation
+import SBJson
 
 class PlacesViewController: UITableViewController {
   var places: [Place] = []
@@ -21,17 +22,20 @@ class PlacesViewController: UITableViewController {
     
     let jsonURL = URL(string: "http://pastebin.com/raw/dTYu3jmN")
     
-    let parser = JSONParser(withURL: jsonURL!)
-    parser.fetch { [weak self] (json, error) in
-      if let error = error {
-        print(error.localizedDescription)
-        return
-      }
-      
-      if let json = json {
-        self?.fillPlacesWithJSON(json)
-      }
-    }
+    let jsonParser = JSONParser(url: jsonURL!)
+    jsonParser?.parse()
+    
+//    let parser = JSONParser(withURL: jsonURL!)
+//    parser.fetch { [weak self] (json, error) in
+//      if let error = error {
+//        print(error.localizedDescription)
+//        return
+//      }
+//      
+//      if let json = json {
+//        self?.fillPlacesWithJSON(json)
+//      }
+//    }
   }
   
   func fillPlacesWithJSON(_ json: JSON) {

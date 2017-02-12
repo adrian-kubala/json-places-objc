@@ -20,4 +20,10 @@
   return self;
 }
 
+- (void)parse {
+  NSError *error;
+  NSData *data = [NSData dataWithContentsOfURL: self.url];
+  NSMutableArray *json = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
+}
+
 @end

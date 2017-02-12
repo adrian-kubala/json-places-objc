@@ -12,7 +12,6 @@
 		3A14C0361D59D179006C908E /* PlacesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A14C0351D59D179006C908E /* PlacesViewController.swift */; };
 		3A1DEB431E4E755C003BC8CA /* Locations.json in Resources */ = {isa = PBXBuildFile; fileRef = 3A1DEB421E4E755C003BC8CA /* Locations.json */; };
 		3A282BE51E4E3C70005DC912 /* Place.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A282BE41E4E3C70005DC912 /* Place.m */; };
-		3A330DDE1E4B903700B1F8FE /* JSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A330DDD1E4B903700B1F8FE /* JSONParser.swift */; };
 		3A5331D91E4BD5ED0037775F /* PlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5331D81E4BD5ED0037775F /* PlaceViewController.swift */; };
 		3A54967A1E4FDBBA009C1D32 /* UIImage+resize.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A5496791E4FDBBA009C1D32 /* UIImage+resize.m */; };
 		3A5496811E4FE460009C1D32 /* CLLocation+distance.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A5496801E4FE460009C1D32 /* CLLocation+distance.m */; };
@@ -34,7 +33,6 @@
 		3A1DEB441E4E862C003BC8CA /* JSONPlaces-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "JSONPlaces-Bridging-Header.h"; sourceTree = "<group>"; };
 		3A282BE31E4E3C70005DC912 /* Place.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Place.h; sourceTree = "<group>"; };
 		3A282BE41E4E3C70005DC912 /* Place.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Place.m; sourceTree = "<group>"; };
-		3A330DDD1E4B903700B1F8FE /* JSONParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONParser.swift; sourceTree = "<group>"; };
 		3A5331D81E4BD5ED0037775F /* PlaceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceViewController.swift; sourceTree = "<group>"; };
 		3A5496781E4FDBBA009C1D32 /* UIImage+resize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+resize.h"; sourceTree = "<group>"; };
 		3A5496791E4FDBBA009C1D32 /* UIImage+resize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+resize.m"; sourceTree = "<group>"; };
@@ -124,7 +122,6 @@
 		3AE546661DA7DAFA001C7BE3 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				3A330DDD1E4B903700B1F8FE /* JSONParser.swift */,
 				3A282BE31E4E3C70005DC912 /* Place.h */,
 				3A282BE41E4E3C70005DC912 /* Place.m */,
 				3AAB75051E50B32E00C1668C /* JSONParser.h */,
@@ -305,7 +302,6 @@
 				3A9756F61E4FE966009DED21 /* NSURL+getImage.m in Sources */,
 				3A14C0361D59D179006C908E /* PlacesViewController.swift in Sources */,
 				3AAB75071E50B32E00C1668C /* JSONParser.m in Sources */,
-				3A330DDE1E4B903700B1F8FE /* JSONParser.swift in Sources */,
 				3A54967A1E4FDBBA009C1D32 /* UIImage+resize.m in Sources */,
 				3A282BE51E4E3C70005DC912 /* Place.m in Sources */,
 				3AA84ABE1E50ABA300B1C850 /* UITableViewController+gesture.m in Sources */,
