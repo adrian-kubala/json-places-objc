@@ -7,12 +7,15 @@
 //
 
 #import "NSURL+getImage.h"
-#import "AFNetworking.h"
+@import AFNetworking;
 
 @implementation NSURL (getImage)
 
 - (void) getImage:(void (^)(UIImage *))completion {
+  UIImageView *imageView = [[UIImageView alloc] init];
+  [imageView setImageWithURL:self];
   
+  completion(imageView.image);
 }
 
 @end
