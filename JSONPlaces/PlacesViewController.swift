@@ -94,6 +94,6 @@ class PlacesViewController: UITableViewController {
   
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     let nearbyPlacesViewController = segue.destination as! NearbyPlacesViewController
-    nearbyPlacesViewController.nearbyPlaces = matchedPlaces
+    nearbyPlacesViewController.nearbyPlaces = NSMutableArray(array: matchedPlaces)
   }
 }
