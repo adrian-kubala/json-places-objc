@@ -95,12 +95,12 @@
 		3AE546641DA7DAEA001C7BE3 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				3A1D71EB1E50EF80008E20D6 /* PlaceViewController.h */,
-				3A1D71EC1E50EF80008E20D6 /* PlaceViewController.m */,
-				3A1D71EE1E50F488008E20D6 /* NearbyPlacesViewController.h */,
-				3A1D71EF1E50F488008E20D6 /* NearbyPlacesViewController.m */,
 				3A791F961E51E27D0023E0D1 /* PlacesViewController.h */,
 				3A791F971E51E27D0023E0D1 /* PlacesViewController.m */,
+				3A1D71EE1E50F488008E20D6 /* NearbyPlacesViewController.h */,
+				3A1D71EF1E50F488008E20D6 /* NearbyPlacesViewController.m */,
+				3A1D71EB1E50EF80008E20D6 /* PlaceViewController.h */,
+				3A1D71EC1E50EF80008E20D6 /* PlaceViewController.m */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
