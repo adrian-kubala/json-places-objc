@@ -12,7 +12,7 @@
         <!--Lokalizacje-->
         <scene sceneID="cOP-1p-FMM">
             <objects>
-                <tableViewController automaticallyAdjustsScrollViewInsets="NO" id="OUs-ub-k41" customClass="PlacesViewController" customModule="JSONPlaces" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController automaticallyAdjustsScrollViewInsets="NO" id="OUs-ub-k41" customClass="PlacesViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="50" sectionHeaderHeight="30" sectionFooterHeight="30" id="gpR-Fh-N7g">
                         <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -180,7 +180,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Z8E-Rj-Pz1" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Jso-2i-FE2">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Jso-2i-FE2">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

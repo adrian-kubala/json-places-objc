@@ -24,6 +24,8 @@
 - (void)viewDidLoad {
   [super viewDidLoad];
   
+  [self setupArrays];
+  
   NSURL *jsonURL = [[NSURL alloc] initWithString:@"http://pastebin.com/raw/dTYu3jmN"];
   
   JSONParser *jsonParser = [[JSONParser alloc] initWithURL:jsonURL];
@@ -37,6 +39,11 @@
       [self fillPlacesWithJSON:result];
     }
   }];
+}
+
+- (void)setupArrays {
+  self.places = [[NSMutableArray alloc] init];
+  self.matchedPlaces = [[NSMutableArray alloc] init];
 }
 
 - (void)fillPlacesWithJSON:(NSArray *)jsonArray {
