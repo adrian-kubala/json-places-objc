@@ -75,5 +75,15 @@
   return cell;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+  [self.matchedPlaces removeAllObjects];
+  
+  Place *place = self.places[indexPath.row];
+  CLLocation *location = place.location;
+//  self getAllDistance
+  
+  [self performSegueWithIdentifier:@"ShowNearbyPlaces" sender:self];
+  
+}
 
 @end
