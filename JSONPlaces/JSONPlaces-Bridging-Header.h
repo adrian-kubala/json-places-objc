@@ -9,6 +9,7 @@
 #import "PlaceView.h"
 #import "PlaceViewController.h"
 #import "NearbyPlacesViewController.h"
+#import "PlacesViewController.h"
 #import "UIImage+resize.h"
 #import "CLLocation+distance.h"
 #import "NSURL+getImage.h"

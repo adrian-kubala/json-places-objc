@@ -9,12 +9,12 @@
 /* Begin PBXBuildFile section */
 		32D9CABD86B9936C4D1FC58D /* Pods_JSONPlaces.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 250F56D50999DFACE9ACEA46 /* Pods_JSONPlaces.framework */; };
 		3A031D871D5873B900FB2CBF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A031D841D5873B900FB2CBF /* Main.storyboard */; };
-		3A14C0361D59D179006C908E /* PlacesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A14C0351D59D179006C908E /* PlacesViewController.swift */; };
 		3A1D71ED1E50EF80008E20D6 /* PlaceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A1D71EC1E50EF80008E20D6 /* PlaceViewController.m */; };
 		3A1D71F01E50F488008E20D6 /* NearbyPlacesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A1D71EF1E50F488008E20D6 /* NearbyPlacesViewController.m */; };
 		3A282BE51E4E3C70005DC912 /* Place.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A282BE41E4E3C70005DC912 /* Place.m */; };
 		3A54967A1E4FDBBA009C1D32 /* UIImage+resize.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A5496791E4FDBBA009C1D32 /* UIImage+resize.m */; };
 		3A5496811E4FE460009C1D32 /* CLLocation+distance.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A5496801E4FE460009C1D32 /* CLLocation+distance.m */; };
+		3A791F981E51E27D0023E0D1 /* PlacesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A791F971E51E27D0023E0D1 /* PlacesViewController.m */; };
 		3A9756F61E4FE966009DED21 /* NSURL+getImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A9756F51E4FE966009DED21 /* NSURL+getImage.m */; };
 		3AA37DED1E50AE7A00CDFB7C /* PlaceView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AA37DEC1E50AE7A00CDFB7C /* PlaceView.m */; };
 		3AA84ABE1E50ABA300B1C850 /* UITableViewController+gesture.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AA84ABD1E50ABA300B1C850 /* UITableViewController+gesture.m */; };
@@ -27,7 +27,6 @@
 /* Begin PBXFileReference section */
 		250F56D50999DFACE9ACEA46 /* Pods_JSONPlaces.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JSONPlaces.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A031D841D5873B900FB2CBF /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = JSONPlaces/Base.lproj/Main.storyboard; sourceTree = SOURCE_ROOT; };
-		3A14C0351D59D179006C908E /* PlacesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlacesViewController.swift; sourceTree = "<group>"; };
 		3A1D71EB1E50EF80008E20D6 /* PlaceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaceViewController.h; sourceTree = "<group>"; };
 		3A1D71EC1E50EF80008E20D6 /* PlaceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaceViewController.m; sourceTree = "<group>"; };
 		3A1D71EE1E50F488008E20D6 /* NearbyPlacesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NearbyPlacesViewController.h; sourceTree = "<group>"; };
@@ -39,6 +38,8 @@
 		3A5496791E4FDBBA009C1D32 /* UIImage+resize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+resize.m"; sourceTree = "<group>"; };
 		3A54967F1E4FE460009C1D32 /* CLLocation+distance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CLLocation+distance.h"; sourceTree = "<group>"; };
 		3A5496801E4FE460009C1D32 /* CLLocation+distance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CLLocation+distance.m"; sourceTree = "<group>"; };
+		3A791F961E51E27D0023E0D1 /* PlacesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlacesViewController.h; sourceTree = "<group>"; };
+		3A791F971E51E27D0023E0D1 /* PlacesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlacesViewController.m; sourceTree = "<group>"; };
 		3A9756F41E4FE966009DED21 /* NSURL+getImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURL+getImage.h"; sourceTree = "<group>"; };
 		3A9756F51E4FE966009DED21 /* NSURL+getImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURL+getImage.m"; sourceTree = "<group>"; };
 		3AA37DEB1E50AE7A00CDFB7C /* PlaceView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaceView.h; sourceTree = "<group>"; };
@@ -103,11 +104,12 @@
 		3AE546641DA7DAEA001C7BE3 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				3A14C0351D59D179006C908E /* PlacesViewController.swift */,
 				3A1D71EB1E50EF80008E20D6 /* PlaceViewController.h */,
 				3A1D71EC1E50EF80008E20D6 /* PlaceViewController.m */,
 				3A1D71EE1E50F488008E20D6 /* NearbyPlacesViewController.h */,
 				3A1D71EF1E50F488008E20D6 /* NearbyPlacesViewController.m */,
+				3A791F961E51E27D0023E0D1 /* PlacesViewController.h */,
+				3A791F971E51E27D0023E0D1 /* PlacesViewController.m */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -299,9 +301,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A791F981E51E27D0023E0D1 /* PlacesViewController.m in Sources */,
 				3A1D71ED1E50EF80008E20D6 /* PlaceViewController.m in Sources */,
 				3A9756F61E4FE966009DED21 /* NSURL+getImage.m in Sources */,
-				3A14C0361D59D179006C908E /* PlacesViewController.swift in Sources */,
 				3AAB75071E50B32E00C1668C /* JSONParser.m in Sources */,
 				3A54967A1E4FDBBA009C1D32 /* UIImage+resize.m in Sources */,
 				3A282BE51E4E3C70005DC912 /* Place.m in Sources */,
