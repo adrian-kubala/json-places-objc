@@ -31,7 +31,6 @@
 		3A1D71EC1E50EF80008E20D6 /* PlaceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaceViewController.m; sourceTree = "<group>"; };
 		3A1D71EE1E50F488008E20D6 /* NearbyPlacesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NearbyPlacesViewController.h; sourceTree = "<group>"; };
 		3A1D71EF1E50F488008E20D6 /* NearbyPlacesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NearbyPlacesViewController.m; sourceTree = "<group>"; };
-		3A1DEB441E4E862C003BC8CA /* JSONPlaces-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "JSONPlaces-Bridging-Header.h"; sourceTree = "<group>"; };
 		3A282BE31E4E3C70005DC912 /* Place.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Place.h; sourceTree = "<group>"; };
 		3A282BE41E4E3C70005DC912 /* Place.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Place.m; sourceTree = "<group>"; };
 		3A5496781E4FDBBA009C1D32 /* UIImage+resize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+resize.h"; sourceTree = "<group>"; };
@@ -76,14 +75,6 @@
 				AF30E538ED69DC7573746F3B /* Pods-JSONPlaces.release.xcconfig */,
 			);
 			name = Pods;
-			sourceTree = "<group>";
-		};
-		3A1DEB451E4E8699003BC8CA /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				3A1DEB441E4E862C003BC8CA /* JSONPlaces-Bridging-Header.h */,
-			);
-			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		3A5CF9831E4B52BF004D6D27 /* Extensions */ = {
@@ -164,7 +155,6 @@
 				3AE546651DA7DAF2001C7BE3 /* View */,
 				3AE546641DA7DAEA001C7BE3 /* ViewController */,
 				3A5CF9831E4B52BF004D6D27 /* Extensions */,
-				3A1DEB451E4E8699003BC8CA /* Supporting Files */,
 			);
 			path = JSONPlaces;
 			sourceTree = "<group>";
@@ -432,7 +422,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.adrian-kubala.JSONPlaces";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "JSONPlaces/JSONPlaces-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OBJC_INTERFACE_HEADER_NAME = "-Swift.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
@@ -451,7 +442,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.adrian-kubala.JSONPlaces";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "JSONPlaces/JSONPlaces-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OBJC_INTERFACE_HEADER_NAME = "-Swift.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
