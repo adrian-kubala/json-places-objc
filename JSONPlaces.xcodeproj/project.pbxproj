@@ -23,7 +23,6 @@
 		3AEDE4EF1D51D5BE00A3661B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEDE4EE1D51D5BE00A3661B /* AppDelegate.swift */; };
 		3AEDE4F61D51D5BE00A3661B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3AEDE4F51D51D5BE00A3661B /* Assets.xcassets */; };
 		3AEDE4F91D51D5BE00A3661B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AEDE4F71D51D5BE00A3661B /* LaunchScreen.storyboard */; };
-		3AFF78F41D5C8BB000B1509B /* NearbyPlacesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AFF78F31D5C8BB000B1509B /* NearbyPlacesViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,7 +54,6 @@
 		3AEDE4F51D51D5BE00A3661B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3AEDE4F81D51D5BE00A3661B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3AEDE4FA1D51D5BE00A3661B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3AFF78F31D5C8BB000B1509B /* NearbyPlacesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NearbyPlacesViewController.swift; sourceTree = "<group>"; };
 		7819EDF7C672B4330C00B1E5 /* Pods-JSONPlaces.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JSONPlaces.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JSONPlaces/Pods-JSONPlaces.debug.xcconfig"; sourceTree = "<group>"; };
 		AF30E538ED69DC7573746F3B /* Pods-JSONPlaces.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JSONPlaces.release.xcconfig"; path = "Pods/Target Support Files/Pods-JSONPlaces/Pods-JSONPlaces.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -108,7 +106,6 @@
 			isa = PBXGroup;
 			children = (
 				3A14C0351D59D179006C908E /* PlacesViewController.swift */,
-				3AFF78F31D5C8BB000B1509B /* NearbyPlacesViewController.swift */,
 				3A1D71EB1E50EF80008E20D6 /* PlaceViewController.h */,
 				3A1D71EC1E50EF80008E20D6 /* PlaceViewController.m */,
 				3A1D71EE1E50F488008E20D6 /* NearbyPlacesViewController.h */,
@@ -317,7 +314,6 @@
 				3AA37DED1E50AE7A00CDFB7C /* PlaceView.m in Sources */,
 				3A5496811E4FE460009C1D32 /* CLLocation+distance.m in Sources */,
 				3AEDE4EF1D51D5BE00A3661B /* AppDelegate.swift in Sources */,
-				3AFF78F41D5C8BB000B1509B /* NearbyPlacesViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
