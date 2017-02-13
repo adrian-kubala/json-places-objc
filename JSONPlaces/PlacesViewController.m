@@ -13,6 +13,7 @@
 #import "Place.h"
 #import "PlaceView.h"
 #import "CLLocation+distance.h"
+#import "NearbyPlacesViewController.h"
 
 @interface PlacesViewController ()
 
@@ -104,6 +105,11 @@
       [self.matchedPlaces addObject:matchedPlace];
     }
   }
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+  NearbyPlacesViewController *nearbyPlacesViewController = (NearbyPlacesViewController *) segue.destinationViewController;
+  nearbyPlacesViewController.nearbyPlaces = [[NSMutableArray alloc] initWithArray:self.matchedPlaces];
 }
 
 @end
