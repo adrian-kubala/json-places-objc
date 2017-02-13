@@ -25,7 +25,10 @@
   [super viewDidLoad];
   
   [self setupArrays];
-  
+  [self setupParser];
+}
+
+- (void)setupParser {
   NSURL *jsonURL = [[NSURL alloc] initWithString:@"http://pastebin.com/raw/dTYu3jmN"];
   
   JSONParser *jsonParser = [[JSONParser alloc] initWithURL:jsonURL];
