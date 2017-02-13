@@ -12,6 +12,7 @@
 #import "UIImage+resize.h"
 #import "Place.h"
 #import "PlaceView.h"
+#import "CLLocation+distance.h"
 
 @interface PlacesViewController ()
 
@@ -80,10 +81,29 @@
   
   Place *place = self.places[indexPath.row];
   CLLocation *location = place.location;
-//  self getAllDistance
+  [self getAllDistancesFrom:location atCellRow:indexPath.row];
   
   [self performSegueWithIdentifier:@"ShowNearbyPlaces" sender:self];
   
+}
+
+- (void)getAllDistancesFrom:(CLLocation *)location atCellRow:(NSInteger)cellRow {
+  for (Place *place in self.places) {
+    NSUInteger i = [self.places indexOfObject:place];
+    
+    if (i == cellRow) {
+      continue;
+    }
+    
+    CLLocation * otherLocation = place.location;
+    double distance = [location distanceInKmTo:otherLocation];
+    
+    if (distance <= 2) {
+      Place *matchedPlace = place;
+      matchedPlace.distance = distance;
+      [self.matchedPlaces addObject:matchedPlace];
+    }
+  }
 }
 
 @end
