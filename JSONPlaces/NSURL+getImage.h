@@ -10,6 +10,6 @@
 
 @interface NSURL (getImage)
 
-- (void)getImage:(void (^)(UIImage *))completion;
+- (void)getImage:(void (^ _Nonnull)(UIImage * _Nullable))completion;
 
 @end
