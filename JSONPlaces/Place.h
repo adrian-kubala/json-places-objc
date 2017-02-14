@@ -9,14 +9,16 @@
 #import <UIKit/UIKit.h>
 #import <CoreLocation/CoreLocation.h>
 
+NS_ASSUME_NONNULL_BEGIN
 @interface Place : NSObject
 
-@property (nonatomic) NSString *name;
+@property (nonatomic, copy) NSString *name;
 @property (nonatomic) CLLocation *location;
-@property (nonatomic) UIImage *pinImage;
+@property (nonatomic, nullable) UIImage *pinImage;
 @property (nonatomic) double distance;
 
-- (instancetype)initWithName:(NSString *)name latitude:(double)latitude longitude:(double)longitude pinImage:(UIImage *)pinImage;
-- (instancetype)initWithName:(NSString *)name latitude:(double)latitude longitude:(double)longitude pinImage:(UIImage *)pinImage distance:(double)distance;
+- (instancetype)initWithName:(NSString *)name latitude:(double)latitude longitude:(double)longitude pinImage:(nullable UIImage *)pinImage;
+- (instancetype)initWithName:(NSString *)name latitude:(double)latitude longitude:(double)longitude pinImage:(nullable UIImage *)pinImage distance:(double)distance;
 
 @end
+NS_ASSUME_NONNULL_END
