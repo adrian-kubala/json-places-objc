@@ -10,6 +10,6 @@
 
 @interface NearbyPlacesViewController : UITableViewController
 
-@property (nonatomic) NSMutableArray *nearbyPlaces;
+@property (nonatomic, nonnull) NSMutableArray *nearbyPlaces;
 
 @end

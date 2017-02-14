@@ -10,7 +10,7 @@
 
 @interface UIImage (resize)
 
-- (void)resizeWithNewWidth:(CGFloat)newWidth completion:(void (^)(UIImage *))completion;
+- (void)resizeWithNewWidth:(CGFloat)newWidth completion:(void (^ _Nonnull)(UIImage * _Nonnull))completion;
 
 @end
  

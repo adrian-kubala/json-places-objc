@@ -10,7 +10,7 @@
 
 @interface PlacesViewController : UITableViewController
 
-@property (nonatomic) NSMutableArray *places;
-@property (nonatomic) NSMutableArray *matchedPlaces;
+@property (nonatomic, nonnull) NSMutableArray *places;
+@property (nonatomic, nonnull) NSMutableArray *matchedPlaces;
 
 @end
