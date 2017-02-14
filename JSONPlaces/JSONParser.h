@@ -8,11 +8,13 @@
 
 #import <Foundation/Foundation.h>
 
+NS_ASSUME_NONNULL_BEGIN
 @interface JSONParser : NSObject
 
 @property (nonatomic) NSURL *url;
 
 - (instancetype)initWithURL:(NSURL *)url;
-- (void)fetch:(void (^)(NSArray *, NSError *))completion;
+- (void)fetch:(void (^)( NSArray * _Nullable,  NSError * _Nullable))completion;
 
 @end
+NS_ASSUME_NONNULL_END
