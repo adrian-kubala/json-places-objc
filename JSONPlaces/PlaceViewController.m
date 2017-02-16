@@ -7,10 +7,7 @@
 //
 
 #import "PlaceViewController.h"
-
-@interface PlaceViewController ()
-
-@end
+#import "Place.h"
 
 @implementation PlaceViewController
 

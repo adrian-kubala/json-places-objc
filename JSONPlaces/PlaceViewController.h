@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import <GoogleMaps/GoogleMaps.h>
-#import "Place.h"
+
+@class Place;
 
 @interface PlaceViewController : UIViewController
 
