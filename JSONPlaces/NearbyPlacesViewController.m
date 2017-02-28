@@ -12,10 +12,6 @@
 #import "Place.h"
 #import "PlaceViewController.h"
 
-@interface NearbyPlacesViewController ()
-
-@end
-
 @implementation NearbyPlacesViewController
 
 - (void)viewDidLoad {

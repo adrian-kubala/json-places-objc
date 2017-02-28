@@ -15,10 +15,6 @@
 #import "CLLocation+Distance.h"
 #import "NearbyPlacesViewController.h"
 
-@interface PlacesViewController ()
-
-@end
-
 @implementation PlacesViewController
 
 - (void)viewDidLoad {
@@ -29,7 +25,7 @@
 }
 
 - (void)setupParser {
-  NSURL *jsonURL = [[NSURL alloc] initWithString:@"http://pastebin.com/raw/dTYu3jmN"];
+  NSURL *jsonURL = [[NSURL alloc] initWithString:@"http://pastebin.com/raw/yrFe2bak"];
   
   JSONParser *jsonParser = [[JSONParser alloc] initWithURL:jsonURL];
   [jsonParser fetch:^(NSArray *result, NSError *error) {
