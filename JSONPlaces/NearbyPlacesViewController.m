@@ -24,6 +24,8 @@
   [self addLongPressGestureRecognizerWithSelector:@selector(showPlaceDetails:)];
 }
 
+# pragma mark UITableViewDataSource
+
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
   return self.nearbyPlaces.count;
 }
