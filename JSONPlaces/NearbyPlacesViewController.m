@@ -7,7 +7,7 @@
 //
 
 #import "NearbyPlacesViewController.h"
-#import "UITableViewController+gesture.h"
+#import "UITableViewController+Gestures.h"
 #import "PlaceView.h"
 #import "Place.h"
 #import "PlaceViewController.h"

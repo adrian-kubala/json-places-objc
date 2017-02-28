@@ -1,5 +1,5 @@
 //
-//  NSURL+getImage.h
+//  NSURL+Image.h
 //  JSONPlaces
 //
 //  Created by Adrian Kubała on 12.02.2017.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface NSURL (getImage)
+@interface NSURL (Image)
 
 - (void)getImage:(void (^ _Nonnull)(UIImage * _Nullable))completion;
 

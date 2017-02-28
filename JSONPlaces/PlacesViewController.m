@@ -8,11 +8,11 @@
 
 #import "PlacesViewController.h"
 #import "JSONParser.h"
-#import "NSURL+getImage.h"
-#import "UIImage+resize.h"
+#import "NSURL+Image.h"
+#import "UIImage+Resizing.h"
 #import "Place.h"
 #import "PlaceView.h"
-#import "CLLocation+distance.h"
+#import "CLLocation+Distance.h"
 #import "NearbyPlacesViewController.h"
 
 @interface PlacesViewController ()

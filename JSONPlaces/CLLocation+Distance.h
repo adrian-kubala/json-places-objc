@@ -1,5 +1,5 @@
 //
-//  CLLocation+distance.h
+//  CLLocation+Distance.h
 //  JSONPlaces
 //
 //  Created by Adrian Kubała on 12.02.2017.
@@ -8,7 +8,7 @@
 
 #import <CoreLocation/CoreLocation.h>
 
-@interface CLLocation (distance)
+@interface CLLocation (Distance)
 
 - (double)distanceInKmTo:(nonnull CLLocation *)location;
 

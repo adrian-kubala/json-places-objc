@@ -1,5 +1,5 @@
 //
-//  UITableViewController+gesture.h
+//  UITableViewController+Gestures.h
 //  JSONPlaces
 //
 //  Created by Adrian Kubała on 12.02.2017.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UITableViewController (gesture)
+@interface UITableViewController (Gestures)
 
 - (void) addLongPressGestureRecognizerWithSelector:(nonnull SEL)selector;
 
