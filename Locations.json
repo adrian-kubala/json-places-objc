@@ -1,0 +1,58 @@
+[
+  {
+    "name": "Politechnika Koszalińska",
+    "coordinate": {
+      "latitude": "54.203608",
+      "longitude": "16.197131"
+    },
+    "pin_url": "http://www.tu.koszalin.pl/system/attachments/attaches/000/000/070/original/godlo-granat.png"
+  },
+  {
+    "name": "Stadion Gwardii",
+    "coordinate": {
+      "latitude": "54.19995",
+      "longitude": "16.198365"
+    },
+    "pin_url": "http://4vector.com/i/free-vector-ks-gwardia-koszalin_034570_ks-gwardia-koszalin.png"
+  },
+  {
+    "name": "Galeria Emka",
+    "coordinate": {
+      "latitude": "54.206968",
+      "longitude": "16.185480"
+    },
+    "pin_url": "https://lh4.ggpht.com/xObeiekWPFjs_6Lq4I8QaddHUUyvIplAal-524fGPiE0YDanMg-C1cvSGBTFBCIAwsY=w300"
+  },
+  {
+    "name": "PKS",
+    "coordinate": {
+      "latitude": "54.189185",
+      "longitude": "16.171110"
+    },
+    "pin_url": "http://www.pkstraducciones.com/img/pks_logo_main.png"
+  },
+  {
+    "name": "Trokadero",
+    "coordinate": {
+      "latitude": "54.193668",
+      "longitude": "16.202942"
+    },
+    "pin_url": "http://dlp2gfjvaz867.cloudfront.net/stores/avatars/26845/medium/alc-logo.jpg?1329714816"
+  },
+  {
+    "name": "Szpital Wojewódzki",
+    "coordinate": {
+      "latitude": "54.198627",
+      "longitude": "16.213509"
+    },
+    "pin_url": "http://images.clipartbro.com/213/logos-for-amp-gt-red-hospital-logo-213654.png"
+  },
+  {
+    "name": "Urząd Miejski",
+    "coordinate": {
+      "latitude": "54.190899",
+      "longitude": "16.181886"
+    },
+    "pin_url": "http://freevector.co/wp-content/uploads/2011/06/18533-city-hall-building-architecture1.png"
+  }
+]
